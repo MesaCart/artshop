@@ -99,9 +99,11 @@
             if (mysql_num_rows($result) > 0) {
                 while($data = mysql_fetch_assoc($result)) {
                     $ret_array[] = array('data' => $data);
-                } else {
-                    return $ret_array;
                 }
+            }
+            else {
+                    return $ret_array;
+                 }
             
             return $ret_array;
         }
