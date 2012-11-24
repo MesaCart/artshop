@@ -12,9 +12,7 @@
     {
         echo "Could not connect to MySql database.";
         exit;
-    } else {
-        echo "connection established\n";
-    }
+    } 
     
     mysql_select_db( $DATABASE );
     
