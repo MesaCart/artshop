@@ -1,16 +1,16 @@
 Ext.define('MC.view.SideBar', {
-    extend: 'Ext.container.Container',
+    extend: 'Ext.panel.Panel',
     alias: 'widget.SideBar',
+	layout:{
+		type:'absolute',
+		align:'center'
+	},
 	items:[
-		{ xtype: 'panel',
+		{ 
+		y: 30,
 		bodyPadding: 5,
 		html:'facebook'
-		},
-		{ xtype: 'panel',
-		bodyPadding: 5,
-		html:'twitter?'
-		}
-	
+		}	
 	]
     //... more configuration ...
 });

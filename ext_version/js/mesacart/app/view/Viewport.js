@@ -23,8 +23,6 @@ Ext.define('MC.view.Viewport',{
 				{xtype:'TopBar',
 					border:true,
 					height:180,
-					//width:'100%',
-					html:'toolbar/logo'
 				},
 				{xtype:'panel',
 					border:true,
