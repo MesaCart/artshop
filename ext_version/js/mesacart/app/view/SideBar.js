@@ -2,12 +2,12 @@ Ext.define('MC.view.SideBar', {
     extend: 'Ext.panel.Panel',
     alias: 'widget.SideBar',
 	layout:{
-		type:'absolute',
-		align:'center'
+		type:'vbox',
+		align:'center',
+		pack:'center'
 	},
 	items:[
 		{ 
-		y: 30,
 		bodyPadding: 5,
 		html:'facebook'
 		}	

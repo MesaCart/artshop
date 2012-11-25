@@ -7,11 +7,17 @@ Ext.define('MC.view.Main',{
 	},
 	activeTab: 0,
 	items: [
-		{title:'Tab 1',
+		{title:'Home',
 			html: 'card 1'
 		},
-		{title:'Tab 2',
-			html: 'card 2'
+		{title:'Paintings',
+			html: 'paintings'
+		},
+		{title:'Framings',
+			html: 'custom Framings'
+		},
+		{title:'Customers(temp)',
+			xtype:'Customers'
 		},
 		{title:'Admin Login',
 			itemId:'AdminLogin',
@@ -23,6 +29,10 @@ Ext.define('MC.view.Main',{
 			itemId:'AdminPortal',
 			html:'this is the admin portal',
 			hidden:true
+		},
+		{title:'Guest Book',
+			itemId:'GuestBook',
+			xtype:'GuestBook'
 		}
 	],
 });
