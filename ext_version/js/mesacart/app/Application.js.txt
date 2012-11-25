@@ -1,0 +1,8 @@
+Ext.application({
+    name: 'mesacart',
+	//may not need this if we load custom views first
+    autoCreateViewport: true,
+    launch: function() {
+        // This is fired as soon as the page is ready
+    }
+});
