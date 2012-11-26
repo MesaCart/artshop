@@ -22,21 +22,73 @@
     
     if($resource == 'email')
     {
-        //deal with email here
+        $id = array_shift($params_array);
+        
+        if($method == 'get'){
+        }
+        
+        elseif($method == 'put'){
+        }
+        
+        elseif($method == 'delete'){
+        }
+        
+        elseif($method == 'post'){
+        }
+        
+        else{
+        }
+        
     }
+    
+    
     elseif($resource == 'customer')
     {
         $id = array_shift($params_array);
-        //customer
-        if(empty($id)){
-            $JSON = new json_maker("Customer","get_all","");
+        
+        if($method == 'get'){
+            if(empty($id)){
+                $JSON = new json_maker("Customer","get_all","");
+                echo $JSON->output;
+            }
+            else{
+                $JSON = new json_maker("Customer","get_customer",$id);
+                echo $JSON->output;
+            }
+        }
+        
+        elseif($method == 'put'){
+            array_unshift($params_array, $id);
+            
+            $JSON = new json_maker("Customer","put_customer",$params_array);
             echo $JSON->output;
         }
+        
+        elseif($method == 'delete'){
+            $JSON = new json_maker("Customer","delete_customer",$id);
+            echo $JSON->output;
+        }
+        
+        elseif($method == 'post'){
+        }
+        
         else{
-            $JSON = new json_maker("Customer","get_customer",$id);
-            echo $JSON->output;
-        }
+        }  
+        
     }
+    
+    elseif($resource == 'news'){
+        
+    }
+    
+    elseif($resource == 'order'){
+        
+    }
+    
+    elseif($resource == 'product'){
+        
+    }
+    
     else
     {
         //header('HTTP/1.1 404 Not Found');

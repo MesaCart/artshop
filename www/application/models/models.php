@@ -68,6 +68,25 @@
             
         }
         
+        function put_customer($arguments){
+            $id = array_shift($arguments);
+            $this -> delete_customer($id);
+            
+            $ret_array = array();
+            $sql = "insert into CustomerTable (id,name,email,address) values('$id%','$arguments[0]','$arguments[1]','$arguments[2]')";
+            $result = mysql_query($sql);
+            return $ret_array;
+        }
+        
+        function delete_customer($id){
+            $sql = "delete from CustomerTable where id='$id%'";
+            $result = mysql_query($sql);
+            $ret_array = array();
+            $ret_array[] =  $result;
+            return $ret_array;
+            
+        }
+        
         
     }
     
@@ -125,4 +144,3 @@
             return $ret_array;
         }
     }
-    
