@@ -3,7 +3,7 @@
     
     $SERVER = 'localhost';
     $USER = 'shop';
-    $PASS = 'enterpasswordhere';
+    $PASS = '$ilovecats$';
     $DATABASE = 'shop';
     
     $r = mysql_connect($SERVER, $USER, $PASS);
@@ -12,7 +12,7 @@
     {
         echo "Could not connect to MySql database.";
         exit;
-    } 
+    }
     
     mysql_select_db( $DATABASE );
     
@@ -28,11 +28,11 @@
                 $obj['id'] = $data->id;
                 $obj['email'] = $data->email;
                 $ret_array[] = $obj;
-            }	
+            }
             
             return $ret_array;
+        }
     }
-}
     
     class Customer{
         function get_customer($id){
@@ -50,6 +50,24 @@
             
             return $ret_array;
         }
+        
+        function get_all(){
+            $ret_array = array();
+            $sql = "select id,name,email,address from CustomerTable";
+            $result = mysql_query($sql);
+            
+            while($data = mysql_fetch_object($result)){
+                $obj['id'] = $data->id;
+                $obj['name'] = $data->name;
+                $obj['email'] = $data->email;
+                $obj['address'] = $data->address;
+                $ret_array[] = $obj;
+            }
+            
+            return $ret_array;
+            
+        }
+        
         
     }
     
@@ -100,15 +118,11 @@
                 while($data = mysql_fetch_assoc($result)) {
                     $ret_array[] = array('data' => $data);
                 }
+            } else {
+                return $ret_array;
             }
-            else {
-                    return $ret_array;
-                 }
             
             return $ret_array;
         }
     }
-    
-    
-        
     

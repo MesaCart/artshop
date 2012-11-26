@@ -29,7 +29,7 @@
         $id = array_shift($params_array);
         //customer
         if(empty($id)){
-            $JSON = new json_maker("Customer","get_all");
+            $JSON = new json_maker("Customer","get_all","");
             echo $JSON->output;
         }
         else{
