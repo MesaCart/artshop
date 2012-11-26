@@ -20,7 +20,7 @@ Ext.define('MC.view.Viewport',{
 			border:true,
 			width: '80%',
 			items:[
-				{xtype:'TopBar',
+				{xtype:'Topbar',
 					border:true,
 					height:180,
 				},

@@ -1,6 +1,6 @@
-Ext.define('MC.view.TopBar', {
+Ext.define('MC.view.Topbar', {
     extend: 'Ext.toolbar.Toolbar',
-    alias: 'widget.TopBar',
+    alias: 'widget.Topbar',
 	cls:'TopBarCls'	
     
 });

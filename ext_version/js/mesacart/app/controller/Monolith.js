@@ -2,7 +2,7 @@ Ext.define('MC.controller.Monolith', {
     extend: 'Ext.app.Controller',
 
 	views: [
-		'TopBar', 'SideBar', 'Main', 'AdminLogin', 'CustomersView', 'FramesView', 'PaintingsView', 'PaintingsGrid'/*, 'GuestBook', 'Customers' */
+		'Topbar', 'SideBar', 'Main', 'AdminLogin', 'CustomersView', 'FramesView', 'PaintingsView', 'PaintingsGrid'/*, 'GuestBook', 'Customers' */
 	],
 	
     init: function() {
