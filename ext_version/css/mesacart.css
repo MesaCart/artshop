@@ -1,0 +1,110 @@
+.ViewportCls { background-color:grey; }
+
+.TopBarCls { background-image:url('../Resources/TopBar.jpg'); }
+
+
+
+
+
+
+
+/*
+/*Extjs framework overrides 
+.x-tab-bar {
+	background-color: #B6954D !important;
+
+
+}
+
+.x-tab-bar-top .x-tab-bar-body {
+
+  height: 55px !important; 
+
+}
+
+.x-tab-bar-top .x-tab-bar-strip {
+  /*position strip from top rather than bottom to avoid off-by-one error in IE6
+  top: 52px !important;
+}
+
+.x-tab-default-top {
+
+  -moz-border-radius-topleft: 6px !important;
+  -webkit-border-top-left-radius: 6px !important;
+  -o-border-top-left-radius: 6px !important;
+  -ms-border-top-left-radius: 6px !important;
+  -khtml-border-top-left-radius: 6px !important;
+  border-top-left-radius: 6px !important;
+  -moz-border-radius-topright: 6px !important;
+  -webkit-border-top-right-radius: 6px !important;
+  -o-border-top-right-radius: 6px !important;
+  -ms-border-top-right-radius: 6px !important;
+  -khtml-border-top-right-radius: 6px !important;
+  border-top-right-radius: 6px !important;
+  -moz-border-radius-bottomright: 0;
+  -webkit-border-bottom-right-radius: 0;
+  -o-border-bottom-right-radius: 0;
+  -ms-border-bottom-right-radius: 0;
+  -khtml-border-bottom-right-radius: 0;
+  border-bottom-right-radius: 0;
+  -moz-border-radius-bottomleft: 0;
+  -webkit-border-bottom-left-radius: 0;
+  -o-border-bottom-left-radius: 0;
+  -ms-border-bottom-left-radius: 0;
+  -khtml-border-bottom-left-radius: 0;
+  border-bottom-left-radius: 0;
+  height: 48px !important;
+  padding: 10px 10px 10px 10px;
+  border-width: 1px 1px 0 1px;
+  border-style: solid;
+  color: #B7964D !important;
+  background-color: #B7964D !important; }
+  
+  
+  
+  .x-nlg .x-tab-default-top-mc {
+  background-color: #B7964D !important; }
+  
+  
+  .x-nbr .x-tab-default-top {
+  padding: 0 !important;
+  border-width: 0 !important;
+  -moz-border-radius: 0px;
+  -webkit-border-radius: 0px;
+  -o-border-radius: 0px;
+  -ms-border-radius: 0px;
+  -khtml-border-radius: 0px;
+  border-radius: 0px;
+  background-color: #B7964D !important;
+  background-position: 1100404px 1000000px; }
+  
+  
+  .x-tab {
+  z-index: 1;
+  background-color: #B7964D !important;
+  margin: 0 0 0 2px;
+  display: inline-block;
+  zoom: 1;
+  *display: inline;
+  white-space: nowrap;
+  height: 27px;
+  border-color: #B7964D !important;
+  cursor: pointer;
+  cursor: hand; }
+  
+  .x-tab button .x-tab-inner {
+      background-color: #B7964D !important;
+      background-repeat: no-repeat;
+      background-position: 0 -2px;
+      display: block;
+      text-align: center;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      -o-text-overflow: ellipsis;
+      overflow: hidden; }
+	  
+	    .x-tab-default-top .x-tab-inner {
+    height: 30px;
+    line-height: 30px; }
+	
+	*/
