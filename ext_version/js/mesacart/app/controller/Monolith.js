@@ -2,11 +2,10 @@ Ext.define('MC.controller.Monolith', {
     extend: 'Ext.app.Controller',
 
 	views: [
-		'TopBar', 'SideBar', 'Main', 'AdminLogin', 
+		'TopBar', 'SideBar', 'Main', 'AdminLogin', 'CustomersView', 'FramesView', 'PaintingsView'/*, 'GuestBook', 'Customers' */
 	],
 	
     init: function() {
-		
 		this.control({
 			
 			'[itemId=loginBtn]':{

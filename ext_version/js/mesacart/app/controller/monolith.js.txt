@@ -1,7 +1,0 @@
-Ext.define('MC.controller.Monolith', {
-    extend: 'Ext.app.Controller',
-
-    init: function() {
-        console.log('Initialized Monolith controller! This happens before the Application launch function is called');
-    }
-});
