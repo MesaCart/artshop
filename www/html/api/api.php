@@ -48,6 +48,9 @@
         }
         
         elseif($method == 'post'){
+            array_unshift($params_array, $id);
+            $JSON = new json_maker("Email","post",$params_array);
+            echo $JSON->output;
         }
         
         else{
@@ -84,6 +87,9 @@
         }
         
         elseif($method == 'post'){
+            array_unshift($params_array, $id);
+            $JSON = new json_maker("Customer","post",$params_array);
+            echo $JSON->output;
         }
         
         else{
@@ -118,6 +124,9 @@
         }
         
         elseif($method == 'post'){
+            array_unshift($params_array, $id);
+            $JSON = new json_maker("News","post",$params_array);
+            echo $JSON->output;
         }
         
         else{
@@ -152,6 +161,10 @@
         }
         
         elseif($method == 'post'){
+            
+            array_unshift($params_array, $id);
+            $JSON = new json_maker("Order","post",$params_array);
+            echo $JSON->output;
         }
         
         else{
@@ -186,6 +199,9 @@
         }
         
         elseif($method == 'post'){
+            array_unshift($params_array, $id);
+            $JSON = new json_maker("Product","post",$params_array);
+            echo $JSON->output;
         }
         
         else{

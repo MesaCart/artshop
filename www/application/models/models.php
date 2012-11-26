@@ -3,7 +3,7 @@
     
     $SERVER = 'localhost';
     $USER = 'shop';
-    $PASS = '$ilovecats$';
+    $PASS = 'passgoeshere';
     $DATABASE = 'shop';
     
     $r = mysql_connect($SERVER, $USER, $PASS);
@@ -65,7 +65,15 @@
             $ret_array = array();
             $ret_array[] =  $result;
             return $ret_array;
-            
+        }
+        
+        function post($arguments){
+            $id = array_shift($arguments);
+            $ret_array = array();
+            $sql = "insert into EmailTable (email) values('$arguments[0]')";
+            $result = mysql_query($sql);
+            $id = mysql_insert_id();
+            return ($this -> get($id));
         }
     }
     
@@ -122,6 +130,16 @@
             
         }
         
+        //add a record - id will be null
+        function post($arguments){
+            $id = array_shift($arguments);
+            $ret_array = array();
+            $sql = "insert into CustomerTable (name,email,address) values('$arguments[0]','$arguments[1]','$arguments[2]')";
+            $result = mysql_query($sql);
+            $id = mysql_insert_id();
+            return ($this -> get($id));
+        }
+        
         
     }
     
@@ -172,7 +190,15 @@
             $ret_array = array();
             $ret_array[] =  $result;
             return $ret_array;
-            
+        }
+        
+        function post($arguments){
+            $id = array_shift($arguments);
+            $ret_array = array();
+            $sql = "insert into NewsTable (news) values('$arguments[0]')";
+            $result = mysql_query($sql);
+            $id = mysql_insert_id();
+            return ($this -> get($id));
         }
     }
     
@@ -231,8 +257,18 @@
             $ret_array = array();
             $ret_array[] =  $result;
             return $ret_array;
-            
         }
+        
+        function post($arguments){
+            $id = array_shift($arguments);
+            $ret_array = array();
+            $sql = "insert into ProductTable (name,description,type,picture,price) values('$arguments[0]','$arguments[1]','$arguments[2]','$arguments[3]','$arguments[4]')";
+            $result = mysql_query($sql);
+            $id = mysql_insert_id();
+            return ($this -> get($id));
+        }
+        
+        
     }
     
     class Order{
@@ -289,5 +325,6 @@
             
         }
     }
+    
     
     
