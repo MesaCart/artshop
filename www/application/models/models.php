@@ -19,10 +19,11 @@
     
     class Email{
         
-        function get_email($id){
+        function get($id){
             $ret_array = array();
             $sql = "select id,email from EmailTable where id = '$id%'";
             $result = mysql_query($sql);
+            
             
             while($data = mysql_fetch_object($result)){
                 $obj['id'] = $data->id;
@@ -32,10 +33,44 @@
             
             return $ret_array;
         }
+        
+        function get_all(){
+            $ret_array = array();
+            $sql = "select id,email from EmailTable";
+            $result = mysql_query($sql);
+            
+            while($data = mysql_fetch_object($result)){
+                $obj['id'] = $data->id;
+                $obj['email'] = $data->email;
+                $ret_array[] = $obj;
+            }
+            
+            return $ret_array;
+            
+        }
+        
+        function put($arguments){
+            $id = array_shift($arguments);
+            $this -> delete($id);
+            
+            $ret_array = array();
+            $sql = "insert into EmailTable (id,email) values('$id%','$arguments[0]')";
+            $result = mysql_query($sql);
+            return $ret_array;
+        }
+        
+        function delete($id){
+            $sql = "delete from EmailTable where id='$id%'";
+            $result = mysql_query($sql);
+            $ret_array = array();
+            $ret_array[] =  $result;
+            return $ret_array;
+            
+        }
     }
     
     class Customer{
-        function get_customer($id){
+        function get($id){
             $ret_array = array();
             $sql = "select id,name,email,address from CustomerTable where id = '$id%'";
             $result = mysql_query($sql);
@@ -68,9 +103,9 @@
             
         }
         
-        function put_customer($arguments){
+        function put($arguments){
             $id = array_shift($arguments);
-            $this -> delete_customer($id);
+            $this -> delete($id);
             
             $ret_array = array();
             $sql = "insert into CustomerTable (id,name,email,address) values('$id%','$arguments[0]','$arguments[1]','$arguments[2]')";
@@ -78,7 +113,7 @@
             return $ret_array;
         }
         
-        function delete_customer($id){
+        function delete($id){
             $sql = "delete from CustomerTable where id='$id%'";
             $result = mysql_query($sql);
             $ret_array = array();
@@ -92,7 +127,7 @@
     
     
     class News{
-        function get_news($id){
+        function get($id){
             $ret_array = array();
             $sql = "select id,news from NewsTable where id = '$id%'";
             $result = mysql_query($sql);
@@ -105,10 +140,44 @@
             
             return $ret_array;
         }
+        
+        function get_all(){
+            $ret_array = array();
+            $sql = "select id,news from NewsTable";
+            $result = mysql_query($sql);
+            
+            while($data = mysql_fetch_object($result)){
+                $obj['id'] = $data->id;
+                $obj['news'] = $data->news;
+                $ret_array[] = $obj;
+            }
+            
+            return $ret_array;
+            
+        }
+        
+        function put($arguments){
+            $id = array_shift($arguments);
+            $this -> delete($id);
+            
+            $ret_array = array();
+            $sql = "insert into NewsTable (id,news) values('$id%','$arguments[0]')";
+            $result = mysql_query($sql);
+            return $ret_array;
+        }
+        
+        function delete($id){
+            $sql = "delete from NewsTable where id='$id%'";
+            $result = mysql_query($sql);
+            $ret_array = array();
+            $ret_array[] =  $result;
+            return $ret_array;
+            
+        }
     }
     
     class Product{
-        function get_product($id){
+        function get($id){
             $ret_array = array();
             $sql = "select id,name,description,type,picture,price from ProductTable where id = '$id%'";
             $result = mysql_query($sql);
@@ -125,12 +194,51 @@
             
             return $ret_array;
         }
+        
+        function get_all(){
+            $ret_array = array();
+            $sql = "select * from ProductTable";
+            $result = mysql_query($sql);
+            
+            while($data = mysql_fetch_object($result)){
+                $obj['id'] = $data->id;
+                $obj['name'] = $data->name;
+                $obj['description'] = $data->description;
+                $obj['type'] = $data->type;
+                $obj['picture'] = $data->picture;
+                $obj['price'] = $data->price;
+                
+                $ret_array[] = $obj;
+            }
+            
+            return $ret_array;
+            
+        }
+        
+        function put($arguments){
+            $id = array_shift($arguments);
+            $this -> delete($id);
+            
+            $ret_array = array();
+            $sql = "insert into ProductTable (id,name,description,type,picture,price) values('$id%','$arguments[0]','$arguments[1]','$arguments[2]', '$arguments[3]','$arguments[4]')";
+            $result = mysql_query($sql);
+            return $ret_array;
+        }
+        
+        function delete($id){
+            $sql = "delete from ProductTable where id='$id%'";
+            $result = mysql_query($sql);
+            $ret_array = array();
+            $ret_array[] =  $result;
+            return $ret_array;
+            
+        }
     }
     
     class Order{
-        function get_order($orderNumber){
+        function get($orderNumber){
             $ret_array = array();
-            $sql = "select orderNumber, productId, quantity, customerId, status from OrdersTable where orderNumber = '$orderNumber%'";
+            $sql = "select orderNumber, productId, quantity, customerId, status from OrderTable where orderNumber = '$orderNumber%'";
             $result = mysql_query($sql);
             
             if (mysql_num_rows($result) > 0) {
@@ -143,4 +251,43 @@
             
             return $ret_array;
         }
+        
+        function get_all(){
+            $ret_array = array();
+            $sql = "select * from OrderTable";
+            $result = mysql_query($sql);
+            
+            while($data = mysql_fetch_object($result)){
+                $obj['orderNumber'] = $data->orderNumber;
+                $obj['productId'] = $data->productId;
+                $obj['quantity'] = $data->quantity;
+                $obj['customerId'] = $data->customerId;
+                $obj['status'] = $data->status;
+                $ret_array[] = $obj;
+            }
+            
+            return $ret_array;
+            
+        }
+        
+        function put($arguments){
+            $id = array_shift($arguments);
+            $this -> delete($id);
+            
+            $ret_array = array();
+            $sql = "insert into OrderTable (orderNumber,productId,quantity,customerId,status) values('$id%','$arguments[0]','$arguments[1]','$arguments[2]','$arguments[3]')";
+            $result = mysql_query($sql);
+            return $ret_array;
+        }
+        
+        function delete($id){
+            $sql = "delete from OrderTable where orderNumber='$id%'";
+            $result = mysql_query($sql);
+            $ret_array = array();
+            $ret_array[] =  $result;
+            return $ret_array;
+            
+        }
     }
+    
+    
