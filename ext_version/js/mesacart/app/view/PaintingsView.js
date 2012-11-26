@@ -1,18 +1,11 @@
 Ext.define('MC.view.PaintingsView',{
-	extend:'Ext.grid.Panel',
+	extend:'Ext.panel.Panel',
 	alias:'widget.PaintingsView',
-	selModel: Ext.create('Ext.selection.CheckboxModel'),
-	store:'Paintings',
-	
-	columns: [
-		{text:'Id', dataIndex:'id'},
-		{text:'Name', dataIndex:'name'},
-		{text:'Desc', dataIndex: 'description'},
-		{text:'Type??', dataIndex: 'type'},
-		{text:'PicURl', dataIndex: 'pic'},
-		{text:'Price', dataIndex: 'price'}/*,
-		{text:'Select', items: [ {xtype:'checkbox'} ]}
-		*/
+	layout: 'vbox',
+	items:[
+		{xtype:'PaintingsGrid', flex:8 },
+		{xtype:'panel', flex:2, items: [ {xtype:'button', text:'Add Selected to cart'} ]}
 	]
+
 	
 });

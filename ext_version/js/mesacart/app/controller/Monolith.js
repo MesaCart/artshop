@@ -2,7 +2,7 @@ Ext.define('MC.controller.Monolith', {
     extend: 'Ext.app.Controller',
 
 	views: [
-		'TopBar', 'SideBar', 'Main', 'AdminLogin', 'CustomersView', 'FramesView', 'PaintingsView'/*, 'GuestBook', 'Customers' */
+		'TopBar', 'SideBar', 'Main', 'AdminLogin', 'CustomersView', 'FramesView', 'PaintingsView', 'PaintingsGrid'/*, 'GuestBook', 'Customers' */
 	],
 	
     init: function() {
@@ -10,12 +10,22 @@ Ext.define('MC.controller.Monolith', {
 			
 			'[itemId=loginBtn]':{
 				click: this.onLoginTry
-			}			
+			},
+			'[xtype=CustomersView]':{
+				render: this.loadCustomers
+			}
 				
 			
 		});
         console.log('Initialized Monolith controller! This happens before the Application launch function is called');
     },
+	
+	loadCustomers: function(controller, eOpts){
+		console.log(this);
+		var theStore = Ext.getStore('Customers');
+		theStore.load();
+		console.log(theStore);
+	},
 	
 	onLoginTry: function(button, event){
 		var pwdField = button.up('panel').down('field');

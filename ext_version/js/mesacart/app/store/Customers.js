@@ -10,9 +10,12 @@ Ext.define('MC.store.Customers',{
 	
 	proxy: {
         type: 'rest',
-		url: 'http://mesacart.com/api/customer/get.php',
+		url: 'http://mesacart.com/api/api.php/customer/',
         //url : baseUrl + '/api/customer/get.php',
 		reader: {
+			type:'json'
+		},
+		writer: {
 			type:'json'
 		}
     },
