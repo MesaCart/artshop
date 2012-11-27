@@ -8,7 +8,7 @@ Ext.define('MC.store.Frames',{
 		url: 'http://www.mesacart.com/api/api.php/product',
 		reader: {
 			type:'json'
-		}
+		},
 		writer:{
 			type:'json'
 		}
@@ -16,7 +16,6 @@ Ext.define('MC.store.Frames',{
 	filters: [{
          property: 'type',
          value: /frame/
-     }],
-	autoload:true
+     }]
 	
 });

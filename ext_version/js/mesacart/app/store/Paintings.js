@@ -16,7 +16,6 @@ Ext.define('MC.store.Paintings',{
 	filters: [{
          property: 'type',
          value: /painting/
-     }],
-	autoload:true
+     }]
 	
 });
