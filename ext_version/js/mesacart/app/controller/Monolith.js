@@ -14,11 +14,20 @@ Ext.define('MC.controller.Monolith', {
 			'[xtype=CustomersView]':{
 				render: this.loadCustomers
 			}
+			'[xtype=PaintingsView]':{
+				render: this.loadPaintings
+			}
 				
 			
 		});
         console.log('Initialized Monolith controller! This happens before the Application launch function is called');
     },
+	
+	loadPaintings: function(controller, eOpts){
+		var theStore = Ext.getStore('Paintings');
+		theStore.load();
+		console.log(theStore);
+	},
 	
 	loadCustomers: function(controller, eOpts){
 		console.log(this);
