@@ -13,6 +13,10 @@ Ext.define('MC.store.Paintings',{
 			type:'json'
 		}
     },
+	filters: [{
+         property: 'type',
+         value: /painting/
+     }],
 	autoload:true
 	
 });
