@@ -5,9 +5,14 @@
     //Constants
     $API_START = 3;
     
+    $body = fopen("php://input", "r");
+    $body = fgets($body);
+    $body = json_decode($body);
     
     $method = strtolower($_SERVER['REQUEST_METHOD']);
     $params = strtolower($_SERVER['REQUEST_URI']);
+    $params = explode("?",$params);
+    $params = $params[0];
     
     $params_array = explode("/",$params);
     
@@ -22,6 +27,7 @@
     
     if($resource == 'email')
     {
+        
         $id = array_shift($params_array);
         
         if($method == 'get'){
@@ -38,6 +44,11 @@
         elseif($method == 'put'){
             array_unshift($params_array, $id);
             
+            if(!empty($body)){
+                $params_array[0] = $body->id;
+                $params_array[1] = $body->email;
+            }
+            
             $JSON = new json_maker("Email","put",$params_array);
             echo $JSON->output;
         }
@@ -49,6 +60,13 @@
         
         elseif($method == 'post'){
             array_unshift($params_array, $id);
+            
+            if(!empty($body)){
+                
+                $params_array[0] = $body->id;
+                $params_array[1] = $body->email;
+            }
+            
             $JSON = new json_maker("Email","post",$params_array);
             echo $JSON->output;
         }
@@ -77,6 +95,14 @@
         elseif($method == 'put'){
             array_unshift($params_array, $id);
             
+            if(!empty($body)){
+                
+                $params_array[0] = $body->id;
+                $params_array[1] = $body->name;
+                $params_array[2] = $body->email;
+                $params_array[3] = $body->address;
+            }
+            
             $JSON = new json_maker("Customer","put",$params_array);
             echo $JSON->output;
         }
@@ -88,6 +114,15 @@
         
         elseif($method == 'post'){
             array_unshift($params_array, $id);
+            
+            if(!empty($body)){
+                
+                $params_array[0] = $body->id;
+                $params_array[1] = $body->name;
+                $params_array[2] = $body->email;
+                $params_array[3] = $body->address;
+            }
+            
             $JSON = new json_maker("Customer","post",$params_array);
             echo $JSON->output;
         }
@@ -114,6 +149,11 @@
         elseif($method == 'put'){
             array_unshift($params_array, $id);
             
+            if(!empty($body)){
+                
+                $params_array[0] = $body->id;
+                $params_array[1] = $body->news;
+            }
             $JSON = new json_maker("News","put",$params_array);
             echo $JSON->output;
         }
@@ -125,6 +165,13 @@
         
         elseif($method == 'post'){
             array_unshift($params_array, $id);
+            
+            if(!empty($body)){
+                
+                $params_array[0] = $body->id;
+                $params_array[1] = $body->news;
+            }
+            
             $JSON = new json_maker("News","post",$params_array);
             echo $JSON->output;
         }
@@ -189,6 +236,16 @@
         elseif($method == 'put'){
             array_unshift($params_array, $id);
             
+            if(!empty($body)){
+                
+                $params_array[0] = $body->id;
+                $params_array[1] = $body->name;
+                $params_array[3] = $body->description;
+                $params_array[4] = $body->type;
+                $params_array[5] = $body->picture;
+                $params_array[6] = $body->price;
+            }   
+            
             $JSON = new json_maker("Product","put",$params_array);
             echo $JSON->output;
         }
@@ -200,6 +257,18 @@
         
         elseif($method == 'post'){
             array_unshift($params_array, $id);
+            
+            if(!empty($body)){
+                
+                $params_array[0] = $body->id;
+                $params_array[1] = $body->name;
+                $params_array[3] = $body->description;
+                $params_array[4] = $body->type;
+                $params_array[5] = $body->picture;
+                $params_array[6] = $body->price;
+            }
+            
+            
             $JSON = new json_maker("Product","post",$params_array);
             echo $JSON->output;
         }
