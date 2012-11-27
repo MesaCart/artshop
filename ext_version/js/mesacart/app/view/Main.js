@@ -38,6 +38,9 @@ Ext.define('MC.view.Main',{
 		},
 		{title:'Admin Portal',
 			itemId:'AdminPortal',
+			items:[
+				{xtype:'AdminMenu'}
+			],
 			html:'this is the admin portal',
 			hidden:true
 		},
