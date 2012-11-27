@@ -13,7 +13,7 @@ Ext.define('MC.controller.Monolith', {
 			},
 			'[xtype=CustomersView]':{
 				render: this.loadCustomers
-			}
+			},
 			'[xtype=PaintingsView]':{
 				render: this.loadPaintings
 			}
