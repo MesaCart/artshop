@@ -4,7 +4,6 @@ Ext.define('MC.view.CustomersView',{
 	html:'blah',
 	
 	store:'Customers',
-	//Ext.data.StoreManager.lookup('CustomersStore'),
 	
 	columns: [
 		{text:'Id', dataIndex:'id'},

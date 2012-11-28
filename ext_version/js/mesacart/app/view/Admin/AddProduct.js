@@ -21,10 +21,13 @@ Ext.define('MC.view.Admin.AddProduct', {
 			},
 			url: 'http://www.mesacart.com/api/api.php/product/',
 			items:[
+				/*
 				{hidden:true,
 					name:'id',
-					value:'null
-				},{fieldLabel: 'Product Name',
+					value:'null'
+				},
+				*/
+				{fieldLabel: 'Product Name',
 					name: 'name',
 					allowBlank: false
 				},{ fieldLabel: 'Product Description',

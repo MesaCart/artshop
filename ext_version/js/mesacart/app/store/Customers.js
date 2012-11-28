@@ -2,16 +2,10 @@ Ext.define('MC.store.Customers',{
 	extend:'Ext.data.Store',
 	storeId:'CustomersStore',
 	model:'MC.model.Customer',
-	/*
-	data:[
-		{id: '1', name: 'Bob Johnson', email: 'bob@hotmail.com', address: '123 east street' },
-	]
-	*/
 	
 	proxy: {
         type: 'rest',
 		url: 'http://www.mesacart.com/api/api.php/customer/',
-        //url : baseUrl + '/api/customer/get.php',
 		reader: {
 			type:'json'
 		},
@@ -22,5 +16,3 @@ Ext.define('MC.store.Customers',{
 	autoload:true
 	
 });
-
-//http://www.mesacart.com/api/api.php/customer/?_dc=1353968474282&page=1&start=0&limit=25
