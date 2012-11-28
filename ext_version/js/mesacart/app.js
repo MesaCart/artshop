@@ -6,7 +6,7 @@ Ext.application({
 		'Monolith'
 	],
 	models: ['Customer', 'Product'],
-	stores: ['Customers', 'Paintings', 'Frames'],
+	stores: ['Customers', 'Paintings', 'Frames', 'AllProducts'],
     launch: function() {
 		console.log('mesacart');
 		

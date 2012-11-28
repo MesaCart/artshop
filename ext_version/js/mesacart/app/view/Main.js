@@ -34,7 +34,7 @@ Ext.define('MC.view.Main',{
 		{title:'Admin Login',
 			itemId:'AdminLogin',
 			items:[
-				{xtype:'AdminLogin'}
+				{xtype:'AdminMenu'}
 			]
 		},
 		{title:'Admin Portal',

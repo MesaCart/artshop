@@ -65,8 +65,12 @@ Ext.define('MC.view.Admin.AddProduct', {
 						//since they use the same proxy
 						var theStore = Ext.getStore('Paintings');
 						if( form.isValid()){
-							var jsonString
-							form.getValues();
+							var nullParams = new Object();
+							nullParams.id = 'null';
+							var jsonParams = Ext.Object.merge(nullParams, form.getValues());
+							console.log(jsonParams);
+							theStore.add(jsonParams);
+							theStore.sync();
 							//form.submit();
 						}
 					}

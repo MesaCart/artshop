@@ -6,7 +6,7 @@ Ext.define('MC.view.PaintingsGrid',{
 	autoScroll:true,
 	columns: {
 			items:[
-				{text:'Id', dataIndex:'id'},
+				//{text:'Id', dataIndex:'id'},
 				{text:'Name', dataIndex:'name'},
 				{text:'Desc', dataIndex: 'description'},
 				{text:'Sample', flex:3, 
