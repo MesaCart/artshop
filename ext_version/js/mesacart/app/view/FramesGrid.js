@@ -3,18 +3,31 @@ Ext.define('MC.view.FramesGrid',{
 	alias:'widget.FramesGrid',
 	selModel: Ext.create('Ext.selection.CheckboxModel'),
 	store:'Frames',
-
-	columns: [
+	autoScroll:true,
+	
+	columns: {
+		items:[
 		{text:'Id', dataIndex:'id'},
 		{text:'Name', dataIndex:'name'},
 		{text:'Desc', dataIndex: 'description'},
 		{text:'Type??', dataIndex: 'type'},
-		{text:'PicURl', dataIndex: 'pic'},
+		{text:'Sample', flex:3, 
+					renderer: function(val){
+						return '<img src ="' + val + '">';
+					},
+					dataIndex: 'picture'
+				},
 		{text:'Price', dataIndex: 'price'}
-	],
+		],
+		defaults: {
+				flex: 1
+		}
 	
-	buttons: [
-		{ text:'Add Selected to cart' }
+	
+	},
+	bbar: [
+		{ xtype: 'button', text: 'Add Selected to cart' }
 	]
 	
+
 });
