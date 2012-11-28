@@ -272,9 +272,9 @@
     }
     
     class Order{
-        function get($orderNumber){
+        function get($id){
             $ret_array = array();
-            $sql = "select orderNumber, productId, quantity, customerId, status from OrderTable where orderNumber = '$orderNumber%'";
+            $sql = "select * from OrderTable where id = '$id%'";
             $result = mysql_query($sql);
             
             if (mysql_num_rows($result) > 0) {
@@ -299,6 +299,7 @@
                 $obj['quantity'] = $data->quantity;
                 $obj['customerId'] = $data->customerId;
                 $obj['status'] = $data->status;
+                $obj['id'] = $data->id;
                 $ret_array[] = $obj;
             }
             
@@ -311,13 +312,13 @@
             $this -> delete($id);
             
             $ret_array = array();
-            $sql = "insert into OrderTable (orderNumber,productId,quantity,customerId,status) values('$id%','$arguments[0]','$arguments[1]','$arguments[2]','$arguments[3]')";
+            $sql = "insert into OrderTable (id,orderNumber,productId,quantity,customerId,status) values('$id%','$arguments[0]','$arguments[1]','$arguments[2]','$arguments[3],'$arguments[4]')";
             $result = mysql_query($sql);
             return $ret_array;
         }
         
         function delete($id){
-            $sql = "delete from OrderTable where orderNumber='$id%'";
+            $sql = "delete from OrderTable where id='$id%'";
             $result = mysql_query($sql);
             $ret_array = array();
             $ret_array[] =  $result;
@@ -325,6 +326,4 @@
             
         }
     }
-    
-    
     

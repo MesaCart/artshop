@@ -198,6 +198,15 @@
         elseif($method == 'put'){
             array_unshift($params_array, $id);
             
+            if(!empty($body)){
+                
+                $params_array[0] = $body->id;
+                $params_array[1] = $body->orderNumber;
+                $params_array[2] = $body->productId;
+                $params_array[3] = $body->quantity;
+                $params_array[4] = $body->customerId;
+                $params_array[5] = $body->status;
+            }
             $JSON = new json_maker("Order","put",$params_array);
             echo $JSON->output;
         }
@@ -210,6 +219,16 @@
         elseif($method == 'post'){
             
             array_unshift($params_array, $id);
+            
+            if(!empty($body)){
+                
+                $params_array[0] = $body->id;
+                $params_array[1] = $body->orderNumber;
+                $params_array[2] = $body->productId;
+                $params_array[3] = $body->quantity;
+                $params_array[4] = $body->customerId;
+                $params_array[5] = $body->status;
+            }
             $JSON = new json_maker("Order","post",$params_array);
             echo $JSON->output;
         }
