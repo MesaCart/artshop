@@ -17,7 +17,7 @@ Ext.define('MC.view.Viewport',{
 			align:'stretch',
 			pack:'start'
 			},
-			border:true,
+			//border:true,
 			width: '80%',
 			items:[
 				{xtype:'TopBar',

@@ -3,7 +3,7 @@ Ext.define('MC.controller.Monolith', {
 
 	views: [
 		'TopBar', 'SideBar', 'Main', 'AdminLogin', 'AdminMenu', 'CustomersView', 'FramesView', 'PaintingsView', 'PaintingsGrid',
-			'FramesGrid'/*, 'GuestBook', 'Customers' */
+			'FramesGrid', 'Admin.AddProduct'
 	],
 	
     init: function() {
@@ -17,12 +17,22 @@ Ext.define('MC.controller.Monolith', {
 			},
 			'[xtype=PaintingsView]':{
 				render: this.loadPaintings
+			},
+			'[itemId=AddProductBtn]':{
+				click: this.addProduct
 			}
 				
 			
 		});
         console.log('Initialized Monolith controller! This happens before the Application launch function is called');
     },
+	
+	addProduct: function(button, event){
+		console.log('clicked add product button');
+		//launch popoup[ for addproduct
+		var window = Ext.create('MC.view.Admin.AddProduct');
+		window.show();
+	},
 	
 	loadPaintings: function(controller, eOpts){
 		var theStore = Ext.getStore('Paintings');

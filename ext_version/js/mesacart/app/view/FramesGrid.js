@@ -2,6 +2,7 @@ Ext.define('MC.view.FramesGrid',{
 	extend:'Ext.grid.Panel',
 	alias:'widget.FramesGrid',
 	//html:'blah',
+	//html:'blah',
 	
 	store:'Frames',
 	
