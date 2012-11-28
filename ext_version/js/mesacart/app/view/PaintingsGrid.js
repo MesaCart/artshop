@@ -3,7 +3,7 @@ Ext.define('MC.view.PaintingsGrid',{
 	alias:'widget.PaintingsGrid',
 	selModel: Ext.create('Ext.selection.CheckboxModel'),
 	store:'Paintings',
-	autoScroll:true;
+	autoScroll:true,
 	columns: [
 		{text:'Id', dataIndex:'id'},
 		{text:'Name', dataIndex:'name'},
