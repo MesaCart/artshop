@@ -11,6 +11,10 @@ Ext.define('MC.view.FramesGrid',{
 		{text:'Type??', dataIndex: 'type'},
 		{text:'PicURl', dataIndex: 'pic'},
 		{text:'Price', dataIndex: 'price'}
+	],
+	
+	buttons: [
+		{ text:'Add Selected to cart' }
 	]
 	
 });

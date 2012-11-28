@@ -12,13 +12,13 @@ Ext.define('MC.view.Main',{
 		},
 		{title:'Paintings',
 			items:[
-				{xtype:'PaintingsView'}
+				{xtype:'PaintingsGrid'}
 			]
 		},
 		{title:'Framings',
 			itemId:'FramesPage',
 			items:[
-				{xtype:'FramesView'}
+				{xtype:'FramesGrid'}
 			]
 		},
 		{title:'Customers(temp)',
