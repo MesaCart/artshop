@@ -7,17 +7,19 @@ Ext.define('MC.view.FramesGrid',{
 	
 	columns: {
 		items:[
-		{text:'Id', dataIndex:'id'},
-		{text:'Name', dataIndex:'name'},
-		{text:'Desc', dataIndex: 'description'},
-		{text:'Type??', dataIndex: 'type'},
-		{text:'Sample', flex:3, 
+			{text:'Name', dataIndex:'name', flex:13},
+			{text:'Desc', dataIndex: 'description', flex:18,
+					renderer: function(val){
+						return '<p>' + val + '</p>'
+					}
+			},
+			{text:'Sample', flex:45, 
 					renderer: function(val){
 						return '<img src ="' + val + '">';
 					},
 					dataIndex: 'picture'
-				},
-		{text:'Price', dataIndex: 'price'}
+			},
+			{text:'Price', dataIndex: 'price', flex:11}
 		],
 		defaults: {
 				flex: 1

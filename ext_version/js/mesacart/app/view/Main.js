@@ -8,7 +8,11 @@ Ext.define('MC.view.Main',{
 	activeTab: 0,
 	items: [
 		{title:'Home',
-			html: '<font size="3" color="red">This is a test</font>'
+			itemId:'HomePage',
+			layout:'fit',
+			items:[
+				{xtype:'NewsGrid'}
+			]
 		},
 		{title:'Paintings',
 			itemId:'PaintingsPage',
