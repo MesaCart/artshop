@@ -17,9 +17,10 @@ Ext.define('MC.view.PaintingsGrid',{
 		},
 		{text:'Price', dataIndex: 'price'}
 	],
-	buttons: [
-		{ text:'Add Selected to cart' }
+	bbar: [
+		{ xtype: 'button', text: 'Add Selected to cart' }
 	]
+
 	
 
 });

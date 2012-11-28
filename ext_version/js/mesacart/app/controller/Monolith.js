@@ -16,7 +16,7 @@ Ext.define('MC.controller.Monolith', {
 				render: this.loadCustomers
 			},
 			'[xtype=PaintingsGrid]':{
-				render: this.loadPaintings
+				beforerender: this.loadPaintings
 			},
 			'[itemId=AddProductBtn]':{
 				click: this.addProduct
