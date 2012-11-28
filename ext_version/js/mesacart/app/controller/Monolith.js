@@ -18,6 +18,9 @@ Ext.define('MC.controller.Monolith', {
 			'[xtype=PaintingsGrid]':{
 				beforerender: this.loadPaintings
 			},
+			'[xtype=FramesGrid]':{
+				beforerender: this.loadFrames
+			},
 			'[itemId=AddProductBtn]':{
 				click: this.addProduct
 			}
@@ -28,8 +31,6 @@ Ext.define('MC.controller.Monolith', {
     },
 	
 	addProduct: function(button, event){
-		console.log('clicked add product button');
-		//launch popoup[ for addproduct
 		var window = Ext.create('MC.view.Admin.AddProduct');
 		window.show();
 	},
@@ -37,14 +38,16 @@ Ext.define('MC.controller.Monolith', {
 	loadPaintings: function(controller, eOpts){
 		var theStore = Ext.getStore('Paintings');
 		theStore.load();
-		console.log(theStore);
+	},
+	loadFrames: function(controller, eOpts){
+		var theStore = Ext.getStore('Frames');
+		theStore.load();
 	},
 	
 	loadCustomers: function(controller, eOpts){
 		console.log(this);
 		var theStore = Ext.getStore('Customers');
 		theStore.load();
-		console.log(theStore);
 	},
 	
 	onLoginTry: function(button, event){
