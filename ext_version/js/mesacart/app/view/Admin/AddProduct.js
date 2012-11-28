@@ -56,23 +56,25 @@ Ext.define('MC.view.Admin.AddProduct', {
 					disabled:true,
 					//initially disabled until form is valid
 					handler: function() {
-						console.log('this');
-						console.log(this)
-						//console.log(this.up('form').getModelData());
 						var form = this.up('form').getForm(); //gets the 'BasicForm' instance
-						//console.log(form.getModelData());
-						//we can probably add to painting of Frame store,
-						//since they use the same proxy
-						var theStore = Ext.getStore('Paintings');
+						
+						//var theStore = Ext.getStore('Paintings');
+						
 						if( form.isValid()){
+							var rec = form.getRecord();
+							console.log(rec);
+							rec.save();
+							/*
 							var nullParams = new Object();
 							nullParams.id = 'null';
 							var jsonParams = Ext.Object.merge(nullParams, form.getValues());
 							console.log(jsonParams);
 							theStore.add(jsonParams);
-							theStore.sync();
-							//form.submit();
+							theStore.sync();							
+							*/
 						}
+						
+						
 					}
 				
 				}

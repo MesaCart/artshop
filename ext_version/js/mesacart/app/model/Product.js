@@ -7,5 +7,17 @@ Ext.define('MC.model.Product', {
 		{name: 'type', type: 'string'},
 		{name: 'picture', type: 'string'},
 		{name: 'price', type: 'string'}
-	]
+	],
+	
+	proxy: {
+        type: 'rest',
+		url: 'http://www.mesacart.com/api/api.php/product',
+		reader: {
+			type:'json'
+		},
+		writer:{
+			type:'json'
+		}
+    }
+	
 });
