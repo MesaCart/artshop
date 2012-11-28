@@ -5,5 +5,15 @@ Ext.define('MC.model.Customer', {
 		{name: 'name', type: 'string'},
 		{name: 'email', type: 'string'},
 		{name: 'address', type: 'string'}
-	]
+		 ],
+
+            proxy: {
+            type: 'rest',
+		url: 'http://www.mesacart.com/api/api.php/customer',
+		reader: {
+		type:'json'
+                    },
+		writer:{
+		type:'json'
+                    }
 });
