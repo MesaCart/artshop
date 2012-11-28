@@ -6,15 +6,6 @@ Ext.define('MC.view.SideBar', {
 		align:'center',
 		pack:'center'
 	},
-	items:[
-		//... code for the widget to load in time with the page
-		{ 
-		bodyPadding: 5,
-		height: 350,
-		width: 250,
-		html: '<div class="fb-like-box" data-href="http://www.facebook.com/OnTheWingsOfArt" data-width="225" data-height="350" data-colorscheme="dark" data-show-faces="true" data-stream="true" data-header="true"></div>'
-		}	
-	],
 	//...attempts to load the widget after the rest of the sidebar has loaded. I belive this is what was explained in the email Alex.
 	listeners: {
 		afterrender: function(){
