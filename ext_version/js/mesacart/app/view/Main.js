@@ -11,6 +11,7 @@ Ext.define('MC.view.Main',{
 			html: '<font size="3" color="red">This is a test</font>'
 		},
 		{title:'Paintings',
+			itemId:'PaintingsPage',
 			layout:'fit',
 			items:[
 				{xtype:'PaintingsGrid'}
@@ -18,6 +19,7 @@ Ext.define('MC.view.Main',{
 		},
 		{title:'Framings',
 			itemId:'FramesPage',
+			layout:'fit',
 			items:[
 				{xtype:'FramesGrid'}
 			]

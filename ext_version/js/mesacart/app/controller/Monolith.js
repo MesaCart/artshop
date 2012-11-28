@@ -23,6 +23,12 @@ Ext.define('MC.controller.Monolith', {
 			},
 			'[itemId=AddProductBtn]':{
 				click: this.addProduct
+			},
+			'[itemId=PaintingsPage]':{
+				beforeactivate: this.loadPaintings
+			},
+			'[itemId=FramesPage]':{
+				beforeactivate: this.loadFrames
 			}
 				
 			
@@ -34,7 +40,6 @@ Ext.define('MC.controller.Monolith', {
 		var window = Ext.create('MC.view.Admin.AddProduct');
 		window.show();
 	},
-	
 	loadPaintings: function(controller, eOpts){
 		var theStore = Ext.getStore('Paintings');
 		theStore.load();
