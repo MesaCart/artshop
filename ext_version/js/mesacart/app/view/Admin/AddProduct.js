@@ -61,7 +61,8 @@ Ext.define('MC.view.Admin.AddProduct', {
 						//var theStore = Ext.getStore('Paintings');
 						
 						if( form.isValid()){
-							var rec = form.getRecord();
+							
+							var rec = Ext.create('MC.model.Product', form.getValues());
 							console.log(rec);
 							rec.save();
 							/*
