@@ -11,6 +11,7 @@ Ext.define('MC.view.Main',{
 			html: 'card 1'
 		},
 		{title:'Paintings',
+			layout:'fit',
 			items:[
 				{xtype:'PaintingsGrid'}
 			]
