@@ -8,7 +8,7 @@ Ext.define('MC.view.Main',{
 	activeTab: 0,
 	items: [
 		{title:'Home',
-			html: 'card 1'
+			html: '<font size="3" color="red">This is a test</font>'
 		},
 		{title:'Paintings',
 			layout:'fit',
