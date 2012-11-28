@@ -10,9 +10,7 @@ Ext.define('MC.view.PaintingsGrid',{
 		{text:'Desc', dataIndex: 'description'},
 		{text:'Type??', dataIndex: 'type'},
 		{text:'PicURl', dataIndex: 'pic'},
-		{text:'Price', dataIndex: 'price'}/*,
-		{text:'Select', items: [ {xtype:'checkbox'} ]}
-		*/
+		{text:'Price', dataIndex: 'price'}
 	]
 	
 });

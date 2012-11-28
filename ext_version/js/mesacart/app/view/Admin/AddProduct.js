@@ -14,15 +14,17 @@ Ext.define('MC.view.Admin.AddProduct', {
 				anchor:'100%'
 			},
 			defaultType:'textfield',
-			//will this work?? works in 4.1.2
-			jsonSubmit:true,
-			//will this work??
+			//jsonSubmit:true,
+			//doesnt work in this version of extjs :(
 			baseParams:{
 				id:'null'
 			},
 			url: 'http://www.mesacart.com/api/api.php/product/',
 			items:[
-				{fieldLabel: 'Product Name',
+				{hidden:true,
+					name:'id',
+					value:'null
+				},{fieldLabel: 'Product Name',
 					name: 'name',
 					allowBlank: false
 				},{ fieldLabel: 'Product Description',
@@ -37,7 +39,8 @@ Ext.define('MC.view.Admin.AddProduct', {
 				},{ fieldLabel: 'Picture Location',
 					name: 'picture',
 					allowBlank: true
-				}
+				},
+					
 			],
 			buttons: [
 				{text:'Reset',
@@ -59,7 +62,9 @@ Ext.define('MC.view.Admin.AddProduct', {
 						//since they use the same proxy
 						var theStore = Ext.getStore('Paintings');
 						if( form.isValid()){
-							form.submit();
+							var jsonString
+							form.getValues();
+							//form.submit();
 						}
 					}
 				

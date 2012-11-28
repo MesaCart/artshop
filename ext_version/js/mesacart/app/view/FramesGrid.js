@@ -1,11 +1,9 @@
 Ext.define('MC.view.FramesGrid',{
 	extend:'Ext.grid.Panel',
 	alias:'widget.FramesGrid',
-	//html:'blah',
-	//html:'blah',
-	
+	selModel: Ext.create('Ext.selection.CheckboxModel'),
 	store:'Frames',
-	
+
 	columns: [
 		{text:'Id', dataIndex:'id'},
 		{text:'Name', dataIndex:'name'},
