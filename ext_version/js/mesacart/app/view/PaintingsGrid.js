@@ -9,12 +9,14 @@ Ext.define('MC.view.PaintingsGrid',{
 		{text:'Name', dataIndex:'name'},
 		{text:'Desc', dataIndex: 'description'},
 		{text:'Type??', dataIndex: 'type'},
-		{text:'PicURl', renderer:renderImage , dataIndex: 'picture'},
+		{text:'PicURl', 
+			renderer: function(val){
+				return '<img src ="' + val + '">';
+			},
+			dataIndex: 'picture'
+		},
 		{text:'Price', dataIndex: 'price'}
 	],
 	
-	function renderImage(val){
-		return '<img src ="' + val + '">';
-	}
-	
+
 });
