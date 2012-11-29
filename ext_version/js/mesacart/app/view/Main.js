@@ -10,12 +10,11 @@ Ext.define('MC.view.Main',{
 	
 		{title:'Home',
 			itemId:'HomePage'
-			/*
 			layout:'fit',
 			items:[
 				{xtype:'NewsGrid'}
 			]
-			*/
+			
 		},
 		{title:'Paintings',
 			itemId:'PaintingsPage',
