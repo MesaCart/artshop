@@ -28,14 +28,13 @@ Ext.define('MC.view.PaintingsGrid',{
 		{ xtype: 'button', text: 'Add Selected to cart', 
 			handler: function(){
 				theGrid = this.up('grid');
-				console.log('grid');
-				console.log(theGrid);
 				theSelModel = theGrid.getSelectionModel();
-				console.log('selModel');
-				console.log(theSelModel);
 				items = theSelModel.getSelection();
-				console.log('items');
+				
 				console.log(items);
+				var confirmBox = Ext.create('Ext.window.MessageBox');
+				confirmBox.alert('Added Items', 'Items were added to cart');
+				theSelModel.deselectAll();
 			}
 		}
 	]
