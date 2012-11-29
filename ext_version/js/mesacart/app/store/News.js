@@ -1,7 +1,7 @@
 Ext.define('MC.store.News',{
 	extend:'Ext.data.Store',
 	storeId:'NewsStore',
-	model:'MC.model.News',
+	model:'MC.model.NewsItem',
 		
 	proxy: {
         type: 'rest',
