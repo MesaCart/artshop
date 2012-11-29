@@ -9,7 +9,7 @@ Ext.define('MC.view.Main',{
 	items: [
 	
 		{title:'Home',
-			itemId:'HomePage'
+			itemId:'HomePage',
 			layout:'fit',
 			items:[
 				{xtype:'NewsGrid'}
