@@ -6,16 +6,16 @@ Ext.define('MC.model.Order', {
 		     {name: 'quantity', type: 'int'},
 		     {name: 'customerId', type: 'int'},
 		     {name: 'status', type: 'string'}
-		     ],
-
-	    proxy: {
-	    type: 'rest',
-                url: 'http://www.mesacart.com/api/api.php/order',
-                reader: {
-		type:'json'
+		],
+	    
+		proxy: {
+			type: 'rest',
+            url: 'http://www.mesacart.com/api/api.php/order',
+            reader: {
+				type:'json'
 		    },
-                writer:{
-		type:'json'
+            writer:{
+				type:'json'
 		    }
 	}
 

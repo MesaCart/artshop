@@ -7,13 +7,14 @@ Ext.define('MC.model.Customer', {
 		{name: 'address', type: 'string'}
 		 ],
 
-            proxy: {
+        proxy: {
             type: 'rest',
-		url: 'http://www.mesacart.com/api/api.php/customer',
-		reader: {
-		type:'json'
-                    },
-		writer:{
-		type:'json'
-                    }
+			url: 'http://www.mesacart.com/api/api.php/customer',
+			reader: {
+				type:'json'
+			},
+			writer:{
+				type:'json'
+			}
+		}
 });

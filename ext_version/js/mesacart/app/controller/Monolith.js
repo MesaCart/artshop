@@ -3,7 +3,7 @@ Ext.define('MC.controller.Monolith', {
 
 	views: [
 		'TopBar', 'SideBar', 'Main', 'AdminLogin', 'AdminMenu', 'CustomersView', 'FramesView', 'NewsGrid',
-		'PaintingsView', 'PaintingsGrid', 'FramesGrid', 'Admin.AddProduct', 'Admin.MasterGrid'
+		'PaintingsView', 'PaintingsGrid', 'FramesGrid', 'Admin.AddProduct', 'Admin.MasterGrid', 'Admin.AddNews'
 	],
 	
     init: function() {
@@ -24,11 +24,17 @@ Ext.define('MC.controller.Monolith', {
 			'[itemId=AddProductBtn]':{
 				click: this.addProduct
 			},
+			'[itemId=AddNewsBtn]':{
+				click: this.addNews
+			},
 			'[itemId=PaintingsPage]':{
 				beforeactivate: this.loadPaintings
 			},
 			'[itemId=FramesPage]':{
 				beforeactivate: this.loadFrames
+			},
+			'[itemId=HomePage]':{
+				beforeactivate: this.loadNews
 			}
 				
 			
@@ -40,8 +46,16 @@ Ext.define('MC.controller.Monolith', {
 		var window = Ext.create('MC.view.Admin.AddProduct');
 		window.show();
 	},
+	addNews: function(button, event){
+		var window = Ext.create('MC.view.Admin.AddNews');
+		window.show();
+	},
 	loadPaintings: function(controller, eOpts){
 		var theStore = Ext.getStore('Paintings');
+		theStore.load();
+	},
+	loadNews: function(controller, eOpts){
+		var theStore = Ext.getStore('News');
 		theStore.load();
 	},
 	loadFrames: function(controller, eOpts){

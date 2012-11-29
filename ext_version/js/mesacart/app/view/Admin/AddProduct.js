@@ -14,11 +14,11 @@ Ext.define('MC.view.Admin.AddProduct', {
 				anchor:'100%'
 			},
 			defaultType:'textfield',
-			//jsonSubmit:true,
-			//doesnt work in this version of extjs :(
+			/*
 			baseParams:{
 				id:'null'
 			},
+			*/
 			url: 'http://www.mesacart.com/api/api.php/product/',
 			items:[
 				/*
@@ -42,6 +42,7 @@ Ext.define('MC.view.Admin.AddProduct', {
 				},{ fieldLabel: 'Picture Location',
 					name: 'picture',
 					allowBlank: true
+					//TODO maskeRe stripCharsRe regex for slashes??
 				},
 					
 			],
@@ -56,14 +57,10 @@ Ext.define('MC.view.Admin.AddProduct', {
 					disabled:true,
 					//initially disabled until form is valid
 					handler: function() {
-						var form = this.up('form').getForm(); //gets the 'BasicForm' instance
-						
-						//var theStore = Ext.getStore('Paintings');
-						
+						var form = this.up('form').getForm(); //gets the 'BasicForm' instance						
 						if( form.isValid()){
 							
 							var rec = Ext.create('MC.model.Product', form.getValues());
-							console.log(rec);
 							rec.save();
 							/*
 							var nullParams = new Object();

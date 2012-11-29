@@ -3,15 +3,17 @@ Ext.define('MC.model.Email', {
 	    fields: [
 		     {name: 'id', type: 'int'},
 		     {name: 'email', type: 'string'}
-		     ],
+		],
 
-            proxy: {
+        proxy: {
             type: 'rest',
-		url: 'http://www.mesacart.com/api/api.php/email',
-		reader: {
-		type:'json'
-                    },
-		writer:{
-		type:'json'
-                    }
+			url: 'http://www.mesacart.com/api/api.php/email',
+			reader: {
+				type:'json'
+			}
+			writer:{
+				type:'json'
+			}
+        }
+		
 	    });
