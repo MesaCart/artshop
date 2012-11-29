@@ -28,7 +28,17 @@ Ext.define('MC.view.FramesGrid',{
 	
 	},
 	bbar: [
-		{ xtype: 'button', text: 'Add Selected to cart' }
+		{ xtype: 'button', text: 'Add Selected to cart',
+			handler: function(){
+				theGrid = this.up('grid');
+				theSelModel = theGrid.getSelectionModel();
+				items = theSelModel.getSelection();
+				Ext.getStore('Cart').add(items);
+				var confirmBox = Ext.create('Ext.window.MessageBox');
+				confirmBox.alert('Added Items', 'Items were added to cart');
+				theSelModel.deselectAll();
+			}		
+		}
 	]
 	
 
