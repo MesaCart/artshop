@@ -7,12 +7,15 @@ Ext.define('MC.view.Main',{
 	},
 	activeTab: 0,
 	items: [
+	
 		{title:'Home',
-			itemId:'HomePage',
+			itemId:'HomePage'
+			/*
 			layout:'fit',
 			items:[
 				{xtype:'NewsGrid'}
 			]
+			*/
 		},
 		{title:'Paintings',
 			itemId:'PaintingsPage',
