@@ -34,7 +34,7 @@ Ext.define('MC.controller.Monolith', {
 				beforeactivate: this.loadFrames
 			},
 			'[itemId=HomePage]':{
-				beforeactivate: this.loadNews
+				activate: this.loadNews
 			}
 				
 			
