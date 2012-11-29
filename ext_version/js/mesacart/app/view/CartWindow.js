@@ -3,10 +3,8 @@ Ext.define('MC.view.CartWindow', {
 	title:'View/Edit Shopping Cart',
 	modal:true,
 	height:350,
-	width:500,
-	layout:'vbox',
-	//layout for fields or fieldset??
-	//layout:'form'
+	width:700,
+	layout:'fit',
 	items:[
 		{xtype:'grid',
 			selModel: Ext.create('Ext.selection.CheckboxModel'),
@@ -32,9 +30,11 @@ Ext.define('MC.view.CartWindow', {
 					handler: function(){
 						theGrid = this.up('grid');
 						theSelModel = theGrid.getSelectionModel();
-						items = theSelModel.getSelection();
+						theSelModel.selectAll();
+						var items = theSelModel.getSelection();
+						Ext.getStore('Cart').remove(items);
 						var confirmBox = Ext.create('Ext.window.MessageBox');
-						confirmBox.alert('Added Items', 'Items were added to cart');
+						confirmBox.alert('Added Items', 'Items were removed from cart');
 						theSelModel.deselectAll();
 					}
 				}

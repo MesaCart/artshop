@@ -29,14 +29,11 @@ Ext.define('MC.view.PaintingsGrid',{
 			handler: function(){
 				theGrid = this.up('grid');
 				theSelModel = theGrid.getSelectionModel();
-				theSelModel.selectAll();
 				items = theSelModel.getSelection();
 				Ext.getStore('Cart').add(items);
 				var confirmBox = Ext.create('Ext.window.MessageBox');
 				confirmBox.alert('Added Items', 'Items were added to cart');
 				theSelModel.deselectAll();
-				console.log(Ext.getStore('Cart'));
-				console.log(Ext.getStore('Cart').remove(items);
 			}
 		}
 	]
