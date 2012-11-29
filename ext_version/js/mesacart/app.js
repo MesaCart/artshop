@@ -6,7 +6,7 @@ Ext.application({
 		'Monolith'
 	],
 	models: ['Customer', 'Product', 'NewsItem'],
-	stores: ['Customers', 'Paintings', 'Frames', 'AllProducts', 'News'],
+	stores: ['Customers', 'Paintings', 'Frames', 'AllProducts', 'News', 'Cart'],
     launch: function() {
 		console.log('mesacart');
 		
@@ -14,5 +14,4 @@ Ext.application({
     }
 });
 
-var cart = null;
 var baseUrl = 'http://www.mesacart.com';

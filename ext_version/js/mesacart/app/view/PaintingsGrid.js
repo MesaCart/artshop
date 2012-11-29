@@ -25,7 +25,19 @@ Ext.define('MC.view.PaintingsGrid',{
 			}
 	},
 	bbar: [
-		{ xtype: 'button', text: 'Add Selected to cart' }
+		{ xtype: 'button', text: 'Add Selected to cart', 
+			handler: function(){
+				theGrid = this.up('grid');
+				console.log('grid');
+				console.log(grid);
+				theSelModel = theGrid.getSelectionModel();
+				console.log('selModel');
+				console.log(theSelModel);
+				items = theSelModel.getSelection
+				console.log('items');
+				console.log(items);
+			}
+		}
 	]
 
 	
