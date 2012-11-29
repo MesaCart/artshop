@@ -29,7 +29,7 @@ Ext.define('MC.view.PaintingsGrid',{
 			handler: function(){
 				theGrid = this.up('grid');
 				console.log('grid');
-				console.log(grid);
+				console.log(theGrid);
 				theSelModel = theGrid.getSelectionModel();
 				console.log('selModel');
 				console.log(theSelModel);
