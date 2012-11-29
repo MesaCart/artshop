@@ -3,7 +3,9 @@
 .TopBarCls { background-image:url('../Resources/topBar.jpg'); }
 
 
-
+.x-grid-cell-inner {
+white-space: normal !important;
+}
 
 
 
