@@ -6,7 +6,8 @@ Ext.define('MC.model.Product', {
 		{name: 'description', type: 'string'},
 		{name: 'type', type: 'string'},
 		{name: 'picture', type: 'string'},
-		{name: 'price', type: 'string'}
+		{name: 'price', type: 'string'},
+		{name: 'qty', type:'int'}
 	],
 	
 	proxy: {

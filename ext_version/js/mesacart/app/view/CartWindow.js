@@ -19,7 +19,8 @@ Ext.define('MC.view.CartWindow', {
 							}
 					},
 					{text:'Type', flex:15, dataIndex: 'type'},
-					{text:'Price', dataIndex: 'price', flex:11}
+					{text:'Price', dataIndex: 'price', flex:11},
+					{text:'Quantity', dataIndex:'qty', flex:4}
 				],
 				defaults: {
 						flex: 1
