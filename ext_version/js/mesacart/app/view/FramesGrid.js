@@ -32,7 +32,8 @@ Ext.define('MC.view.FramesGrid',{
 			handler: function(){
 				theGrid = this.up('grid');
 				theSelModel = theGrid.getSelectionModel();
-				items = theSelModel.getSelection();
+				item = theSelModel.getSelection()[0];
+				console.log(item);
 				Ext.getStore('Cart').add(items);
 				var confirmBox = Ext.create('Ext.window.MessageBox');
 				confirmBox.alert('Added Items', 'Items were added to cart');
