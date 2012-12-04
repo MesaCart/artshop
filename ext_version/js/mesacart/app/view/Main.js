@@ -30,19 +30,10 @@ Ext.define('MC.view.Main',{
 				{xtype:'FramesGrid'}
 			]
 		},
-		{title:'Customers(temp)',
-			itemId:'CustomerTable',
-			items:[
-				{xtype:'CustomersView'},
-				{xtype:'button',
-					text:'butn'
-				}
-			]
-		},
 		{title:'Admin Login',
 			itemId:'AdminLogin',
 			items:[
-				{xtype:'AdminMenu'}
+				{xtype:'AdminLogin'}
 			]
 		},
 		{title:'Admin Portal',

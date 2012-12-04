@@ -12,9 +12,6 @@ Ext.define('MC.controller.Monolith', {
 			'[itemId=loginBtn]':{
 				click: this.onLoginTry
 			},
-			'[xtype=CustomersView]':{
-				render: this.loadCustomers
-			},
 			'[xtype=PaintingsGrid]':{
 				beforerender: this.loadPaintings
 			},
@@ -27,6 +24,9 @@ Ext.define('MC.controller.Monolith', {
 			'[itemId=AddNewsBtn]':{
 				click: this.addNews
 			},
+			'[itemId=ViewGuestsBtn]':{
+				click: this.viewGuests
+			},
 			'[itemId=PaintingsPage]':{
 				beforeactivate: this.loadPaintings
 			},
@@ -37,7 +37,6 @@ Ext.define('MC.controller.Monolith', {
 				activate: this.loadNews
 			}
 				
-			
 		});
         console.log('Initialized Monolith controller! This happens before the Application launch function is called');
     },
@@ -49,6 +48,9 @@ Ext.define('MC.controller.Monolith', {
 	addNews: function(button, event){
 		var window = Ext.create('MC.view.Admin.AddNews');
 		window.show();
+	},
+	loadNews: function(button, event){
+		
 	},
 	loadPaintings: function(controller, eOpts){
 		var theStore = Ext.getStore('Paintings');
@@ -62,13 +64,11 @@ Ext.define('MC.controller.Monolith', {
 		var theStore = Ext.getStore('Frames');
 		theStore.load();
 	},
-	
 	loadCustomers: function(controller, eOpts){
 		console.log(this);
 		var theStore = Ext.getStore('Customers');
 		theStore.load();
 	},
-	
 	onLoginTry: function(button, event){
 		var pwdField = button.up('panel').down('field');
 		var password = pwdField.rawValue;
