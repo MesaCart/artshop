@@ -2,6 +2,7 @@ Ext.define('MC.view.Main',{
 	extend: 'Ext.tab.Panel',
 	alias:'widget.Main',
 	itemId:'mainView',
+	cls:'MainViewCls',
 	layout:{
 		type:'card'
 	},
