@@ -14,7 +14,7 @@ Ext.define('MC.view.PaintingsGrid',{
 				},
 				{text:'Sample', flex:45, 
 					renderer: function(val){
-						return '<img src ="' + val + '">';
+						return '<img src ="' + val + '" height="100" width="100">';
 					},
 					dataIndex: 'picture'
 				},
@@ -31,7 +31,7 @@ Ext.define('MC.view.PaintingsGrid',{
 				theSelModel = theGrid.getSelectionModel();
 				item = theSelModel.getSelection()[0];
 				console.log(item);
-				Ext.getStore('Cart').add(items);
+				Ext.getStore('Cart').add(item);
 				var confirmBox = Ext.create('Ext.window.MessageBox');
 				confirmBox.alert('Added Items', 'Items were added to cart');
 				theSelModel.deselectAll();
