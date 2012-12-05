@@ -27,6 +27,11 @@ Ext.define('MC.view.PaintingsGrid',{
 				flex: 1
 			}
 	},
+	plugins: [ 
+		Ext.create('Ext.grid.plugin.CellEditing', {
+		clicksToEdit: 1
+		})
+	],
 	bbar: [
 		{ xtype: 'button', text: 'Add Selected to cart', 
 			handler: function(){
