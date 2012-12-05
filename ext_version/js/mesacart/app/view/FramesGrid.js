@@ -19,7 +19,13 @@ Ext.define('MC.view.FramesGrid',{
 					},
 					dataIndex: 'picture'
 			},
-			{text:'Price', dataIndex: 'price', flex:11}
+			{text:'Price', dataIndex: 'price', flex:11},
+			{text:'Quantity', dataIndex:'qty', flex:11, 
+					editor: {xtype:'textarea', height:'100'},
+					renderer: function(val){
+						return 1;
+					}
+				},
 		],
 		defaults: {
 				flex: 1
@@ -27,6 +33,11 @@ Ext.define('MC.view.FramesGrid',{
 	
 	
 	},
+	plugins: [ 
+		Ext.create('Ext.grid.plugin.CellEditing', {
+		clicksToEdit: 1
+		})
+	],
 	bbar: [
 		{ xtype: 'button', text: 'Add Selected to cart',
 			handler: function(){
