@@ -18,7 +18,9 @@ Ext.define('MC.view.PaintingsGrid',{
 					},
 					dataIndex: 'picture'
 				},
-				{text:'Price', dataIndex: 'price', flex:11}
+				{text:'Price', dataIndex: 'price', flex:11},
+				{text:'Quantity', dataIndex:'qty', flex:11, 
+					editor: {xtype:'textarea', height:'100'}
 			],
 			defaults: {
 				flex: 1
@@ -33,6 +35,7 @@ Ext.define('MC.view.PaintingsGrid',{
 				console.log(item);
 				var prompt = Ext.create('MC.view.QuantityPrompt');
 				prompt.show();
+				
 				Ext.getStore('Cart').add(item);
 				var confirmBox = Ext.create('Ext.window.MessageBox');
 				confirmBox.alert('Added Items', 'Items were added to cart');
