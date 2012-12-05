@@ -31,6 +31,8 @@ Ext.define('MC.view.PaintingsGrid',{
 				theSelModel = theGrid.getSelectionModel();
 				item = theSelModel.getSelection()[0];
 				console.log(item);
+				var prompt = Ext.create('MC.view.QuantityPrompt');
+				prompt.show();
 				Ext.getStore('Cart').add(item);
 				var confirmBox = Ext.create('Ext.window.MessageBox');
 				confirmBox.alert('Added Items', 'Items were added to cart');
