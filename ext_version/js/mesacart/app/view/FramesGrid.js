@@ -15,7 +15,7 @@ Ext.define('MC.view.FramesGrid',{
 			},
 			{text:'Sample', flex:45, 
 					renderer: function(val){
-						return '<img src ="' + val + '">';
+						return '<img src ="' + val + '" height="100" width="100">';
 					},
 					dataIndex: 'picture'
 			},
