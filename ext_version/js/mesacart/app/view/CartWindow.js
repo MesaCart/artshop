@@ -22,7 +22,7 @@ Ext.define('MC.view.CartWindow', {
 					{text:'Price', dataIndex: 'price', flex:11},
 					{text:'Quantity', dataIndex:'qty', flex:4},
 					{text:'Total', renderer: function (value, metaData, record, row, col, store, gridView) {
-							return row;
+							return record.price;
 					}
 					}
 				],
