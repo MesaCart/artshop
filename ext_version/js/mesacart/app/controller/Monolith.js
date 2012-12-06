@@ -42,11 +42,11 @@ Ext.define('MC.controller.Monolith', {
     },
 	
 	viewGuests: function(button, event){
-		var window = Ext.create('MC.view.Admin.CustomersView');
+		var window = Ext.create('MC.view.CustomersView');
 		window.show();
 	},
 	addProduct: function(button, event){
-		var window = Ext.create('MC.view.CustomersView');
+		var window = Ext.create('MC.view.Admin.AddProduct');
 		window.show();
 	},
 	addNews: function(button, event){
