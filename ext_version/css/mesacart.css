@@ -1,7 +1,7 @@
 /* the bit that has the logo at the top of the page */
 .TopBarCls {
     background-color: #A8D024;
-    background-image:url('../Resources/bird_shadow.svg');
+    background-image:url('../Resources/bird.svg');
     background-repeat: no-repeat; }
 
 /* this is visible behind the tabs at the top */
