@@ -1,6 +1,7 @@
 Ext.define('MC.view.CartWindow', {
 	extend:'Ext.window.Window',
 	title:'View/Edit Shopping Cart',
+	cls:'CartWindowCls',
 	modal:true,
 	height:350,
 	width:700,
