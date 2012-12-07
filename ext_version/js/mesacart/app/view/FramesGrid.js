@@ -3,6 +3,7 @@ Ext.define('MC.view.FramesGrid',{
 	alias:'widget.FramesGrid',
 	selModel: Ext.create('Ext.selection.CheckboxModel'),
 	store:'Frames',
+	cls:'FramesGridCls',
 	autoScroll:true,
 	
 	columns: {
@@ -30,8 +31,6 @@ Ext.define('MC.view.FramesGrid',{
 		defaults: {
 				flex: 1
 		}
-	
-	
 	},
 	plugins: [ 
 		Ext.create('Ext.grid.plugin.CellEditing', {
@@ -52,6 +51,4 @@ Ext.define('MC.view.FramesGrid',{
 			}		
 		}
 	]
-	
-
 });
