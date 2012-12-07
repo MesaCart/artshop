@@ -66,6 +66,10 @@ Ext.define('MC.controller.Monolith', {
 	loadProducts: function(controller, eOpts){
 		var theStore = Ext.getStore('AllProducts');
 		theStore.load();
+		theStore = Ext.getStore('Paintings');
+		theStore.load();
+		theStore = Ext.getStore('Frames');
+		theStore.load();
 	},
 	showRemoveProducts: function(button, event){
 		var theStore = Ext.getStore('AllProducts');
