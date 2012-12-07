@@ -55,8 +55,6 @@ Ext.define('MC.controller.Monolith', {
 	showRemoveProducts: function(button, event){
 		var theStore = Ext.getStore('AllProducts');
 		theStore.load();
-		var tryThis = Ext.getStore('ProductsStore');
-		tryThis.load();
 		var window = Ext.create('MC.view.Admin.RemoveProducts');
 		window.show();
 	},
