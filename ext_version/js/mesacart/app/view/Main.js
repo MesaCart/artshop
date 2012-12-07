@@ -44,6 +44,5 @@ Ext.define('MC.view.Main',{
 			],
 			hidden:true
 		},
-
-	],
+	]
 });
