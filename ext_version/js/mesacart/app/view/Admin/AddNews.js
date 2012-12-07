@@ -1,6 +1,7 @@
 Ext.define('MC.view.Admin.AddNews', {
 	extend:'Ext.window.Window',
 	title:'Add a news update',
+	cls:'AddNewsCls',
 	modal:true,
 	height:300,
 	width:400,
