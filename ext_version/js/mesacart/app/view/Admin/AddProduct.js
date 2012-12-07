@@ -1,7 +1,6 @@
 Ext.define('MC.view.Admin.AddProduct', {
 	extend:'Ext.window.Window',
 	title:'Add a product',
-	cls:'AddProductCls',
 	modal:true,
 	height:300,
 	width:400,
@@ -44,7 +43,7 @@ Ext.define('MC.view.Admin.AddProduct', {
 					name: 'picture',
 					allowBlank: true
 					//TODO maskeRe stripCharsRe regex for slashes??
-				},
+				}
 					
 			],
 			buttons: [

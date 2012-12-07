@@ -13,10 +13,5 @@ Ext.define('MC.store.AllProducts',{
 			type:'json'
 		}
     }
-	/*
-	filters: [{
-      
-     }]
-	*/
 	
 });
