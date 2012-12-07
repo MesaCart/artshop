@@ -2,6 +2,7 @@ Ext.define('MC.view.AdminLogin',{
 	extend:'Ext.Panel',
 	alias:'widget.AdminLogin',
 	layout:'form',
+	cls:'AdminLoginCls',
 	bodyPadding: 5,
 	defaultType: 'textfield',
 	items:[
