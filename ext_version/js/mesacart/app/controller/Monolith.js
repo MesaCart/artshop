@@ -16,6 +16,12 @@ Ext.define('MC.controller.Monolith', {
 			'[xtype=PaintingsGrid]':{
 				beforerender: this.loadPaintings
 			},
+			'[xtype=CustomersView]':{
+				beforerender: this.loadCustomers
+			},
+			'[xtype=RemoveProducts]':{
+				beforerender: this.loadProducts
+			},
 			'[xtype=FramesGrid]':{
 				beforerender: this.loadFrames
 			},
@@ -52,6 +58,14 @@ Ext.define('MC.controller.Monolith', {
 	addProduct: function(button, event){
 		var window = Ext.create('MC.view.Admin.AddProduct');
 		window.show();
+	},
+	loadCustomers: function(controller, eOpts){
+		var theStore = Ext.getStore('Customers');
+		theStore.load();
+	},
+	loadProducts: function(controller, eOpts){
+		var theStore = Ext.getStore('AllProducts');
+		theStore.load();
 	},
 	showRemoveProducts: function(button, event){
 		var theStore = Ext.getStore('AllProducts');
