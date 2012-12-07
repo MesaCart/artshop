@@ -64,9 +64,6 @@ Ext.define('MC.controller.Monolith', {
 		var window = Ext.create('MC.view.Admin.AddNews');
 		window.show();
 	},
-	loadNews: function(button, event){
-		
-	},
 	loadPaintings: function(controller, eOpts){
 		var theStore = Ext.getStore('Paintings');
 		theStore.load();
