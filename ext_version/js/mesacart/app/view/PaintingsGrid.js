@@ -23,7 +23,7 @@ Ext.define('MC.view.PaintingsGrid',{
 				{text:'Quantity', dataIndex:'qty', flex:11, 
 					editor: {xtype:'textarea', height:'100'},
 					renderer: function(val){
-						return 1;
+						return val;
 					}
 				},
 			],
