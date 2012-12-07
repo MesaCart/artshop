@@ -1,7 +1,6 @@
 Ext.define('MC.view.Admin.RemoveProducts',{
 	extend:'Ext.window.Window',
 	alias:'widget.RemoveProducts',
-	cls:'RemoveProductsCls',
 	title:'Remove Products',
 	modal:true,
 	height:350,
@@ -35,7 +34,8 @@ Ext.define('MC.view.Admin.RemoveProducts',{
 					handler: function(){
 						theGrid = this.up('grid');
 						theSelModel = theGrid.getSelectionModel();
-						item = theSelModel.getSelection()[0];			
+						item = theSelModel.getSelection()[0];
+						console.log(item);
 						Ext.getStore('AllProducts').remove(item);
 						Ext.getStore('AllProducts').sync();
 						//Ext.getStore('Cart').add(item);
