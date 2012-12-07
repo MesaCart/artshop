@@ -16,15 +16,39 @@ Ext.define('MC.view.CartWindow', {
 			autoScroll:true,
 			columns: {
 				items:[
-					{text:'Name', dataIndex:'name', flex:13},
+					{text:'Name', dataIndex:'name', flex:13,
+						summaryType: 'count',
+							summaryRenderer: function(value, summaryData, dataIndex) {
+								return ' '; 
+							}
+					},
 					{text:'Desc', dataIndex: 'description', flex:18,
 							renderer: function(val){
 								return '<p>' + val + '</p>'
+							},
+							summaryType: 'count',
+							summaryRenderer: function(value, summaryData, dataIndex) {
+								return ' '; 
 							}
 					},
-					{text:'Type', flex:15, dataIndex: 'type'},
-					{text:'Price', dataIndex: 'price', flex:11},
-					{text:'Quantity', dataIndex:'qty', flex:6},
+					{text:'Type', flex:15, dataIndex: 'type',
+							summaryType: 'count',
+							summaryRenderer: function(value, summaryData, dataIndex) {
+								return ' '; 
+							}
+					},
+					{text:'Price', dataIndex: 'price', flex:11,
+							summaryType: 'count',
+							summaryRenderer: function(value, summaryData, dataIndex) {
+								return ' '; 
+							}
+					},
+					{text:'Quantity', dataIndex:'qty', flex:6,
+						summaryType: 'count',
+							summaryRenderer: function(value, summaryData, dataIndex) {
+								return ' '; 
+							}
+					},
 					{text:'Total', flex:14, renderer: function(value, metaData, record){
 								console.log(record);
 								return (record.get('qty'))*(record.get('price'));
