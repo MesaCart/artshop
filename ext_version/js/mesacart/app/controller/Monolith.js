@@ -2,8 +2,8 @@ Ext.define('MC.controller.Monolith', {
     extend: 'Ext.app.Controller',
 
 	views: [
-		'TopBar', 'SideBar', 'Main', 'AdminLogin', 'AdminMenu', 'CustomersView', 'FramesView', 'NewsGrid',
-		'PaintingsView', 'PaintingsGrid', 'FramesGrid', 'Admin.AddProduct', 'Admin.MasterGrid',
+		'TopBar', 'SideBar', 'Main', 'AdminLogin', 'AdminMenu', 'CustomersView', 'NewsGrid',
+		'PaintingsGrid', 'FramesGrid', 'Admin.AddProduct', 'Admin.MasterGrid',
 		'Admin.AddNews', 'CartWindow', 'QuantityPrompt'
 	],
 	
@@ -20,6 +20,9 @@ Ext.define('MC.controller.Monolith', {
 			},
 			'[itemId=AddProductBtn]':{
 				click: this.addProduct
+			},
+			'[itemId=RemoveProductBtn]':{
+				click: this.showRemoveProducts
 			},
 			'[itemId=AddNewsBtn]':{
 				click: this.addNews
@@ -47,6 +50,12 @@ Ext.define('MC.controller.Monolith', {
 	},
 	addProduct: function(button, event){
 		var window = Ext.create('MC.view.Admin.AddProduct');
+		window.show();
+	},
+	showRemoveProducts: function(button, event){
+		var theStore = Ext.getStore('AllProducts');
+		theStore.load();
+		var window = Ext.create('MC.view.Admin.RemoveProducts');
 		window.show();
 	},
 	addNews: function(button, event){

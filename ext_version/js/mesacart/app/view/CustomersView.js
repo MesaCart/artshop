@@ -2,6 +2,10 @@ Ext.define('MC.view.CustomersView',{
 	extend:'Ext.window.Window',
 	title:'View Guests',
 	alias:'widget.CustomersView',
+	modal:true,
+	height:350,
+	width:700,
+	layout:'fit',
 	
 	items:[
 		{xtype:'grid',

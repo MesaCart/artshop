@@ -42,7 +42,6 @@ Ext.define('MC.view.Main',{
 			items:[
 				{xtype:'AdminMenu'}
 			],
-			html:'this is the admin portal',
 			hidden:true
 		},
 
