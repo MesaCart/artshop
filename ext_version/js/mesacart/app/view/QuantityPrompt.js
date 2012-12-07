@@ -1,14 +1,14 @@
 Ext.define('MC.view.QuantityPrompt', {
 	extend:'Ext.window.Window',
 	alias:'widget.QuantityPrompt',
-	
+	cls:'QuantityPromptCls',
 	items:[
 		{xtype:'form',
 			items:[
 				{xtype:'textfield',
 					fieldLabel: 'Enter Quantity for selected item',
 					name:'quantity',
-					allowBlank:false,
+					allowBlank:false
 				}	
 			],
 			
@@ -31,14 +31,7 @@ Ext.define('MC.view.QuantityPrompt', {
 					}
 				}
 				}
-			]
-			
-			
+			]	
 		}
-	
-	
-	]
-	
-	
-	
+	]	
 });
