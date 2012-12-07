@@ -21,7 +21,7 @@ Ext.define('MC.view.Admin.RemoveProducts',{
 									return '<p>' + val + '</p>'
 								}
 						},
-						{text:'Type', flex:19, dataIndex: 'type' },
+						{text:'Type', dataIndex: 'type' },
 						{text:'Price', dataIndex: 'price'}
 					],
 					defaults: {

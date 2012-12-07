@@ -1,7 +1,6 @@
 Ext.define('MC.view.CartWindow', {
 	extend:'Ext.window.Window',
 	title:'View/Edit Shopping Cart',
-	cls:'CartWindowCls',
 	modal:true,
 	height:350,
 	width:700,
@@ -22,6 +21,11 @@ Ext.define('MC.view.CartWindow', {
 					{text:'Type', flex:15, dataIndex: 'type'},
 					{text:'Price', dataIndex: 'price', flex:11},
 					{text:'Quantity', dataIndex:'qty', flex:4},
+					{text:'Total', flex:14, renderer: function(value, metaData, record){
+								console.log(record);
+						
+							}
+					}
 				],
 				defaults: {
 						flex: 1
