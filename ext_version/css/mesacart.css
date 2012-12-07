@@ -33,7 +33,7 @@
       text-overflow: ellipsis;
       -o-text-overflow: ellipsis;
       overflow: hidden;
-      color: #CF71BA }
+      color: #CF71BA; }
 
   /* make tabs change color when hovered */
   .x-tab:hover {
@@ -43,3 +43,5 @@
   .x-tab-default-top .x-tab-inner {
     height: 30px;
     line-height: 30px; }
+  .NewsGridCls {
+    text-wrap: normal; }
