@@ -12,7 +12,7 @@ Ext.define('MC.store.AllProducts',{
 		writer:{
 			type:'json'
 		}
-    },
+    }
 	/*
 	filters: [{
       

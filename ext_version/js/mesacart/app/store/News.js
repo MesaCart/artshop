@@ -12,6 +12,6 @@ Ext.define('MC.store.News',{
 		writer:{
 			type:'json'
 		}
-    },
+    }
 	
 });
