@@ -61,12 +61,11 @@ Ext.define('MC.view.CartWindow', {
 						
 					}
 				],
-				defaults: {
-						flex: 1
-				}
+				defaults: { flex: 1 }
 			},
 			bbar: [
-				{ xtype: 'button', text: 'Remove All', 
+				{	xtype: 'button',
+					text: 'Remove All', 
 					handler: function(){
 						theGrid = this.up('grid');
 						theSelModel = theGrid.getSelectionModel();
@@ -76,6 +75,13 @@ Ext.define('MC.view.CartWindow', {
 						var confirmBox = Ext.create('Ext.window.MessageBox');
 						confirmBox.alert('Added Items', 'Items were removed from cart');
 						theSelModel.deselectAll();
+					}
+				},
+				{	xtype:'button',
+					text:'Checkout',
+					handler: function(){
+						var window = Ext.create('MC.view.PaypalWindow');
+						window.show();
 					}
 				}
 			]	
