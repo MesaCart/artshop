@@ -23,7 +23,7 @@ Ext.define('MC.view.CartWindow', {
 					{text:'Quantity', dataIndex:'qty', flex:4},
 					{text:'Total', flex:14, renderer: function(value, metaData, record){
 								console.log(record);
-						
+								return (record.get('qty'))*(record.get('price'));
 							}
 					}
 				],
