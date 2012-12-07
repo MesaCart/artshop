@@ -6,7 +6,7 @@ Ext.define('MC.view.AdminLogin',{
 	bodyPadding: 5,
 	defaultType: 'textfield',
 	items:[
-		{fieldLabel:'Admin Password (pass1234)',
+		{fieldLabel:'Admin Password',
 			name:'password'
 		},
 		{xtype:'button',
