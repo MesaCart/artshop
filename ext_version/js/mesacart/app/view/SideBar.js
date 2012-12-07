@@ -1,6 +1,7 @@
 Ext.define('MC.view.SideBar', {
-    extend: 'Ext.panel.Panel',
-    alias: 'widget.SideBar',
+	extend: 'Ext.panel.Panel',
+	alias: 'widget.SideBar',
+	cls:'SideBarCls',
 	layout:{
 		type:'vbox',
 		align:'center',
