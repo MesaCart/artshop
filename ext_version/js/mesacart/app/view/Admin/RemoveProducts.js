@@ -1,6 +1,7 @@
 Ext.define('MC.view.Admin.RemoveProducts',{
 	extend:'Ext.window.Window',
 	alias:'widget.RemoveProducts',
+	cls:'RemoveProductsCls',
 	title:'Remove Products',
 	modal:true,
 	height:350,

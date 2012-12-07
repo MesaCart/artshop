@@ -1,6 +1,7 @@
 Ext.define('MC.view.Admin.AddProduct', {
 	extend:'Ext.window.Window',
 	title:'Add a product',
+	cls:'AddProductCls',
 	modal:true,
 	height:300,
 	width:400,

@@ -2,6 +2,7 @@ Ext.define('MC.view.Admin.MasterGrid', {
         extend:'Ext.grid.Panel',
 		alias:'widget.MasterAdminGrid',
 		id:'button-grid',
+		cls:'MasterGridCls',
 		selModel: Ext.create('Ext.selection.CheckboxModel', {
 			listeners: {
 				selectionchange: function(sm, selections) {
