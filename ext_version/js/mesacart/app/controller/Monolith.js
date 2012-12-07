@@ -4,7 +4,8 @@ Ext.define('MC.controller.Monolith', {
 	views: [
 		'TopBar', 'SideBar', 'Main', 'AdminLogin', 'AdminMenu', 'CustomersView', 'NewsGrid',
 		'PaintingsGrid', 'FramesGrid', 'Admin.AddProduct', 'Admin.MasterGrid',
-		'Admin.AddNews', 'CartWindow', 'QuantityPrompt', 'Admin.RemoveProducts'
+		'Admin.AddNews', 'CartWindow', 'QuantityPrompt', 'Admin.RemoveProducts',
+		'CheckInForm'
 	],
 	
     init: function() {

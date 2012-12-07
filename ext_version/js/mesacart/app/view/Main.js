@@ -31,6 +31,13 @@ Ext.define('MC.view.Main',{
 				{xtype:'FramesGrid'}
 			]
 		},
+		{title:'Check in',
+			itemId:'CheckIn',
+			layout:'fit',
+			items:[
+				{xtype:'CheckInForm'}
+			]
+		},
 		{title:'Admin Login',
 			itemId:'AdminLogin',
 			items:[
@@ -44,5 +51,6 @@ Ext.define('MC.view.Main',{
 			],
 			hidden:true
 		},
-	]
+
+	],
 });

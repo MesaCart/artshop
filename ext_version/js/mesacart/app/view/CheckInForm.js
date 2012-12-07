@@ -1,5 +1,6 @@
 Ext.define('MC.view.CheckInForm', {
 	extend:'Ext.form.Panel',
+	alias:'widget.CheckInForm',
 	layout:'anchor',
 	defaults:{
 		anchor:'100%'
@@ -38,3 +39,5 @@ Ext.define('MC.view.CheckInForm', {
 				
 				}
 			]
+
+});
