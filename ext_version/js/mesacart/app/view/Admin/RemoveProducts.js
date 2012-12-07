@@ -36,10 +36,12 @@ Ext.define('MC.view.Admin.RemoveProducts',{
 						theSelModel = theGrid.getSelectionModel();
 						item = theSelModel.getSelection()[0];			
 						Ext.getStore('AllProducts').remove(item);
+						Ext.getStore('AllProducts').sync();
 						//Ext.getStore('Cart').add(item);
 						var confirmBox = Ext.create('Ext.window.MessageBox');
 						confirmBox.alert('Removed item from inventory');
 						theSelModel.deselectAll();
+						Ext.getStore('AllProducts').load();
 					}
 				}
 			]
