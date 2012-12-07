@@ -8,12 +8,8 @@ Ext.define('MC.model.Email', {
         proxy: {
             type: 'rest',
 			url: 'http://www.mesacart.com/api/api.php/email',
-			reader: {
-				type:'json'
-			}
-			writer:{
-				type:'json'
-			}
+			reader: { type:'json' },
+			writer:{ type:'json' }
         }
 		
 	    });
