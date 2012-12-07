@@ -3,7 +3,6 @@ Ext.define('MC.view.PaintingsGrid',{
 	alias:'widget.PaintingsGrid',
 	selModel: Ext.create('Ext.selection.CheckboxModel'),
 	store:'Paintings',
-	cls:'PaintingsGridCls',
 	autoScroll:true,
 	columns: {
 			items:[
@@ -23,7 +22,7 @@ Ext.define('MC.view.PaintingsGrid',{
 				{text:'Quantity', dataIndex:'qty', flex:11, 
 					editor: {xtype:'textarea', height:'100'},
 					renderer: function(val){
-						return val;
+						return 1;
 					}
 				},
 			],
@@ -39,6 +38,7 @@ Ext.define('MC.view.PaintingsGrid',{
 	bbar: [
 		{ xtype: 'button', text: 'Add Selected to cart', 
 			handler: function(){
+				console.log(this);
 				theGrid = this.up('grid');
 				theSelModel = theGrid.getSelectionModel();
 				item = theSelModel.getSelection()[0];			
@@ -49,4 +49,7 @@ Ext.define('MC.view.PaintingsGrid',{
 			}
 		}
 	]
+
+	
+
 });

@@ -3,7 +3,6 @@ Ext.define('MC.view.FramesGrid',{
 	alias:'widget.FramesGrid',
 	selModel: Ext.create('Ext.selection.CheckboxModel'),
 	store:'Frames',
-	cls:'FramesGridCls',
 	autoScroll:true,
 	
 	columns: {
@@ -31,6 +30,8 @@ Ext.define('MC.view.FramesGrid',{
 		defaults: {
 				flex: 1
 		}
+	
+	
 	},
 	plugins: [ 
 		Ext.create('Ext.grid.plugin.CellEditing', {
@@ -40,6 +41,8 @@ Ext.define('MC.view.FramesGrid',{
 	bbar: [
 		{ xtype: 'button', text: 'Add Selected to cart',
 			handler: function(){
+				console.log(this);
+				//if(this.added)
 				theGrid = this.up('grid');
 				theSelModel = theGrid.getSelectionModel();
 				item = theSelModel.getSelection()[0];
@@ -51,4 +54,6 @@ Ext.define('MC.view.FramesGrid',{
 			}		
 		}
 	]
+	
+
 });
