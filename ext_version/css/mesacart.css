@@ -16,33 +16,6 @@
 .x-tab-bar-top .x-tab-bar-strip {
   top: 52px !important; }
 
-/* makes the tabs rounded; preserved for future use if needed */
-/*.x-tab-default-top {
-  height: 48px !important;
-  -moz-border-radius-topleft: 6px !important;
-  -webkit-border-top-left-radius: 6px !important;
-  -ms-border-top-left-radius: 6px !important;
-  -khtml-border-top-left-radius: 6px !important;
-  border-top-left-radius: 6px !important;
-  -moz-border-radius-topright: 6px !important;
-  -webkit-border-top-right-radius: 6px !important;
-  -ms-border-top-right-radius: 6px !important;
-  -khtml-border-top-right-radius: 6px !important;
-  border-top-right-radius: 6px !important;
-  -moz-border-radius-bottomright: 0;
-  -webkit-border-bottom-right-radius: 0;
-  -ms-border-bottom-right-radius: 0;
-  -khtml-border-bottom-right-radius: 0;
-  border-bottom-right-radius: 0;
-  -moz-border-radius-bottomleft: 0;
-  -webkit-border-bottom-left-radius: 0;
-  -ms-border-bottom-left-radius: 0;
-  -khtml-border-bottom-left-radius: 0;
-  border-bottom-left-radius: 0;
-  padding: 10px 10px 10px 10px;
-  border-width: 1px 1px 0 1px;
-  border-style: solid; }*/
-  
 /* format the tabs at the top of the screen */
   .x-tab {
       background-color: #9F1B82;
