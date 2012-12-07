@@ -1,5 +1,6 @@
 Ext.define('MC.view.AdminMenu', {
 	extend:'Ext.panel.Panel',
+	cls:'AdminMenuCls',
 	alias:'widget.AdminMenu',
 	
 	/*
