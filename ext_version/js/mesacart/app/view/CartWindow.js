@@ -30,11 +30,11 @@ Ext.define('MC.view.CartWindow', {
 								return (record.get('qty'))*(record.get('price'));
 							},
 						summaryType:'sum',
-						/*
-						summaryRenderer: function(value summaryData, dataIndex){
-						
+					
+						summaryRenderer: function(value, summaryData, dataIndex){
+							return value;
 						}
-						*/
+						
 					}
 				],
 				defaults: {
