@@ -8,6 +8,10 @@ Ext.define('MC.view.CartWindow', {
 	items:[
 		{xtype:'grid',
 			selModel: Ext.create('Ext.selection.CheckboxModel'),
+			features: [{
+				//to have a sum row at the bottom
+				ftype: 'summary'
+			}],
 			store:'Cart',
 			autoScroll:true,
 			columns: {
@@ -20,11 +24,17 @@ Ext.define('MC.view.CartWindow', {
 					},
 					{text:'Type', flex:15, dataIndex: 'type'},
 					{text:'Price', dataIndex: 'price', flex:11},
-					{text:'Quantity', dataIndex:'qty', flex:4},
+					{text:'Quantity', dataIndex:'qty', flex:6},
 					{text:'Total', flex:14, renderer: function(value, metaData, record){
 								console.log(record);
 								return (record.get('qty'))*(record.get('price'));
-							}
+							},
+						summaryType:'sum',
+						/*
+						summaryRenderer: function(value summaryData, dataIndex){
+						
+						}
+						*/
 					}
 				],
 				defaults: {
