@@ -1,3 +1,5 @@
+//Author amo3
+
 <?php
 require '../../application/models/json_maker.php';
 require '../../application/models/models.php';
@@ -9,6 +11,8 @@ $body = fopen("php://input", "r");
 $body = fgets($body);
 $body = json_decode($body);
 
+//Get the method(PUT,GET,POST, DELETE)
+//and the URI, and format nicely.
 $method = strtolower($_SERVER['REQUEST_METHOD']);
 $params = strtolower($_SERVER['REQUEST_URI']);
 $params = explode("?",$params);
@@ -22,9 +26,23 @@ array_shift($params_array);
 array_shift($params_array);
 array_shift($params_array);
 
+
+//Resource will contain what we are attempting to request/put
+//For example, email, customer etc.
 $resource = array_shift($params_array);
 //echo $resource;
 
+
+//Section below contains similar code for all different resources.
+//Each resource formats the JSON string (or, if there is none, the
+//raw URL) for the appropriate request, and then makes that call
+//on the corresponding model.
+//GET -> Request information.
+//PUT -> Change information.
+//POST -> Add a new entry.
+//DELETE -> Delete entry.
+
+//Email requests.
 if($resource == 'email')
   {
  
@@ -77,6 +95,7 @@ if($resource == 'email')
   }
 
 
+//Customer resource requests.
 elseif($resource == 'customer')
   {
     $id = array_shift($params_array);
@@ -132,6 +151,8 @@ elseif($resource == 'customer')
     }      
   }
 
+
+//News resource requests.
 elseif($resource == 'news'){
   $id = array_shift($params_array);
 
@@ -181,6 +202,8 @@ elseif($resource == 'news'){
   }
 }
 
+
+//order resource requests.
 elseif($resource == 'order'){
   $id = array_shift($params_array);
 
@@ -238,6 +261,8 @@ elseif($resource == 'order'){
   }
 }
 
+
+//Product resource requests.
 elseif($resource == 'product'){
   $id = array_shift($params_array);
 
@@ -299,6 +324,9 @@ elseif($resource == 'product'){
   }
 }
 
+
+//If nothing matches, return a 404 (maybe this should be a JSON string with
+//a failure field or something.)
 else
   {
     //header('HTTP/1.1 404 Not Found');

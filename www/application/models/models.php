@@ -1,11 +1,14 @@
 <?php
     //if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-    
+  //General connection info - Should be changed
+  //to meet the specifications of the system.
+  //Try not to push this to GIT if it's filled in with real info...
     $SERVER = 'localhost';
     $USER = 'shop';
     $PASS = 'enterpasshere';
     $DATABASE = 'shop';
-    
+
+    //Connect to mysql
     $r = mysql_connect($SERVER, $USER, $PASS);
     
     if (!$r)
@@ -16,15 +19,20 @@
     
     mysql_select_db( $DATABASE );
     
-    
+//Email Class handles communication with EmailTable
+//This class will be explained in detail.
+//The other classes follow nearly identical patterns.
     class Email{
         
+      //get function is called whenever GET requests are made
+      //to api/api.php/get
         function get($id){
+	  //make a return array and perform the sql query.
             $ret_array = array();
             $sql = "select id,email from EmailTable where id = '$id%'";
             $result = mysql_query($sql);
 
-            
+            //Fill key/value pairs for each value in the array, and return the result.
             while($data = mysql_fetch_object($result)){
                 $obj['id'] = $data->id;
                 $obj['email'] = $data->email;
@@ -33,12 +41,14 @@
             
             return $ret_array;
     }
-
+	//Get all gets all emails in table.
 	function get_all(){
 	  $ret_array = array();
 	  $sql = "select id,email from EmailTable";
 	  $result = mysql_query($sql);
-
+	  
+	  //Continuously get new entries and fill a dictionary with them
+	  //until no entries left that match query.
 	  while($data = mysql_fetch_object($result)){
 	    $obj['id'] = $data->id;
 	    $obj['email'] = $data->email;
@@ -48,7 +58,8 @@
 	  return $ret_array;
 	    
 	}
-
+	
+	//Put changes entry in table.
 	function put($arguments){
 	  $id = array_shift($arguments);
 	  $this -> delete($id);
@@ -66,7 +77,12 @@
 	  $ret_array[] =  $result;
 	  return $ret_array;
 	}
-
+	
+	//Post adds a new entry into the table.
+	//Called whenever POST is made on api/api.php/email
+	//Data can be supplied and will be used during creation
+	//However, id will be ignored.
+	//Returns the new entry.
         function post($arguments){
           $id = array_shift($arguments);
           $ret_array = array();
@@ -77,6 +93,7 @@
         }
 }
     
+//Customer class handles communication with CustomerTable
     class Customer{
         function get($id){
             $ret_array = array();
@@ -143,7 +160,7 @@
         
     }
     
-    
+//News class handles communication with news table
     class News{
         function get($id){
             $ret_array = array();
@@ -202,6 +219,8 @@
         }
     }
     
+
+//Product class handles communication with product table
     class Product{
         function get($id){
             $ret_array = array();
@@ -273,6 +292,7 @@
         
     }
     
+//Order class handles communication with orders table.
     class Order{
         function get($id){
             $ret_array = array();
