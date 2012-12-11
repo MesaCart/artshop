@@ -76,13 +76,6 @@ Ext.define('MC.view.CartWindow', {
 						confirmBox.alert('Added Items', 'Items were removed from cart');
 						theSelModel.deselectAll();
 					}
-				},
-				{	xtype:'button',
-					text:'Checkout',
-					handler: function(){
-						var window = Ext.create('MC.view.PaypalWindow');
-						window.show();
-					}
 				}
 			]	
 		}
